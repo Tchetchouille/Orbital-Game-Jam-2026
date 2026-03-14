@@ -27,7 +27,7 @@ func _ready():
 			random_obj = random_obj.substr(0,len(random_obj) - 5)
 			random_obj += str(head_nbr)+".png"
 			print(random_obj)
-			node.modulate = Color(randf(), randf(), randf(),1)
+			node.modulate = skin_tone_color()
 			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
 		elif feature == "hair":
 			node.z_index=4
@@ -56,3 +56,11 @@ func _ready():
 			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
 		print(node.texture)
 		add_child(node)
+func skin_tone_color():
+	var t=randf()
+	var r = (129*t**3 -  482*t**2 + 137*t + 244)/255
+	var g = (616*t**3 - 1066*t**2 + 237*t + 240)/255
+	var b = (556*t**3 -  706*t**2 -  41*t + 238)/255
+	var color = Color(r,g,b,1)
+
+	return color
