@@ -11,7 +11,7 @@ signal create_link(agent_a, agent_b)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	drawing = false
-	for agent in get_children():
+	for agent in get_tree().get_nodes_in_group("agent_areas"):
 		agent.mouse_enter_agent.connect(agent_enterred)
 		agent.mouse_exit_agent.connect(agent_exited)
 

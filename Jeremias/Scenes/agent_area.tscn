@@ -5,7 +5,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_id82k"]
 radius = 84.0238
 
-[node name="AgentArea" type="Area2D" unique_id=1002194706]
+[node name="AgentArea" type="Area2D" unique_id=1002194706 groups=["agent_areas"]]
 script = ExtResource("1_bwk34")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1523435971]
