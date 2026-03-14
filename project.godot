@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 GameMusic="*res://Basis/Scenes/Autoloads/game_music.tscn"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [file_customization]
 
 folder_colors={
