@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="1_s6c6e"]
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="2_y8mri"]
+[ext_resource type="PackedScene" path="res://Jeremias/Scenes/agent_manager.tscn" id="3_y8mri"]
 
 [node name="FloScene" type="Node2D" unique_id=1412494028]
 
@@ -21,3 +22,5 @@ id = 2
 position = Vector2(874, 255)
 alignment = 0.4
 id = 3
+
+[node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("3_y8mri")]

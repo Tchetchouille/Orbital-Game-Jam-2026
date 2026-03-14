@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bokrped5eme4x" path="res://Florian/agent.gd" id="1_6ei7d"]
 [ext_resource type="Texture2D" uid="uid://carwaymivooak" path="res://icon.svg" id="1_g0r8e"]
+[ext_resource type="PackedScene" path="res://Jeremias/Scenes/agent_area.tscn" id="3_jcr1x"]
 
 [node name="Agent" type="Node2D" unique_id=1399513064 node_paths=PackedStringArray("portrait", "background")]
 script = ExtResource("1_6ei7d")
@@ -13,3 +14,5 @@ background = NodePath("Background")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1336759345]
 texture = ExtResource("1_g0r8e")
+
+[node name="AgentArea" parent="." unique_id=1002194706 instance=ExtResource("3_jcr1x")]
