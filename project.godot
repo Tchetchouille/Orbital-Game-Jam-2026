@@ -23,6 +23,16 @@ config/icon="res://icon.svg"
 
 GameMusic="*res://Basis/Scenes/Autoloads/game_music.tscn"
 
+[file_customization]
+
+folder_colors={
+"res://Colin/": "yellow",
+"res://Florian/": "red",
+"res://Jeremias/": "teal",
+"res://Joël/": "pink",
+"res://Mei/": "blue"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
