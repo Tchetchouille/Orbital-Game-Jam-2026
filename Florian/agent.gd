@@ -19,4 +19,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	background.modulate = Color.BLUE.lerp(Color.RED, alignment)
+	background.modulate = Color.BLUE.lerp(Color.RED, (alignment + 1.0) * 0.5)
