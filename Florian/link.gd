@@ -4,6 +4,7 @@ class_name Link
 
 @export var agent1: Agent
 @export var agent2: Agent
+@export var removable: bool
 
 var created_by_player: bool = false
 

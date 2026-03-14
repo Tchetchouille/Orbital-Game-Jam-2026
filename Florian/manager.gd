@@ -39,14 +39,17 @@ func create_link(agent1: Agent, agent2: Agent, created_by_player: bool = false) 
 	add_child(new_link)
 
 func remove_link(link: Link) -> void:
-	links.erase(str(link.agent1.id) + "_" + str(link.agent2.id))
-	remove_child(link)
+	if link.removable:
+		links.erase(str(link.agent1.id) + "_" + str(link.agent2.id))
+		remove_child(link)
+	else:
+		print("LINK CANNOT BE REMOVED")
 
 func propagate_alignment(agent: Agent, neighbors: Array[Agent]) -> float:
 	var last_align = agent.alignment
 	var new_align = 0 + agent.alignment
 	for neighbour in neighbors:
-		new_align += ((cos(last_align)*abs(cos(last_align)))*neighbour.alignment)/(len(neighbors)**3)
+		new_align += ((cos(last_align)**6)/4*neighbour.alignment)
 		if abs(new_align)>=1:
 			new_align = -1 if new_align<0 else 1
 	return new_align
