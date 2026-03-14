@@ -6,15 +6,8 @@ class_name Agent
 var alignment = 0.0
 
 @export var id: int
-
-
-@export_node_path("Sprite2D") var background_path
-
-var background: Sprite2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	background = get_node(background_path)
+@export var portrait: Sprite2D
+@export var background: Sprite2D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

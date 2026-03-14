@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://bflw25c4t7xum"]
 
+[ext_resource type="Script" uid="uid://blx7c2ppgex6x" path="res://Florian/manager.gd" id="1_l7imd"]
+
 [node name="Manager" type="Node" unique_id=263219502]
+script = ExtResource("1_l7imd")
