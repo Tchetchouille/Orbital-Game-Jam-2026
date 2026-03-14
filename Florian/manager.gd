@@ -7,7 +7,7 @@ var links: Dictionary[String, Link] = {}
 
 func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
-	
+	#$"../AgentManager".remove_link.connect(_on_remove_link)
 	# create_link(agents[0], agents[1])
 	# create_link(agents[1], agents[2])
 	# create_link(agents[2], agents[0])
@@ -22,6 +22,10 @@ func create_link(agent1: Agent, agent2: Agent) -> void:
 	new_link.set_agents(agent1, agent2)
 	links[str(agent1.id) + "_" + str(agent2.id)] = new_link
 	add_child(new_link)
+
+func remove_link(link: Link) -> void:
+	links.erase(str(link.agent1.id) + "_" + str(link.agent2.id))
+	remove_child(link)
 
 func propagate_alignment(agent: Agent, neighbors: Array[Agent]) -> float:
 	var last_align = agent.alignment
@@ -56,13 +60,6 @@ func get_other_agent(link: Link, agent: Agent) -> Agent:
 	return link.agent2 if link.agent1 == agent else link.agent1
 
 func get_link_by_ids(agent1_id:int, agent2_id:int) -> Link:
-	if str(agent1_id)+"_"+str(agent2_id) in links:
-		return links[str(agent1_id)+"_"+str(agent2_id)]
-	return null
-
-func _on_create_link(agent1_id:int, agent2_id:int):
-	print("CONNECT"+str(agent1_id)+"_"+str(agent2_id))
-
 	# Ensure agent1_id is smaller than agent2_id
 	# (Order is important for the link key)
 	if agent1_id > agent2_id:
@@ -71,8 +68,22 @@ func _on_create_link(agent1_id:int, agent2_id:int):
 		agent2_id = temp
 
 	if str(agent1_id)+"_"+str(agent2_id) in links:
+		return links[str(agent1_id)+"_"+str(agent2_id)]
+	return null
+
+func get_agent_by_id(id: int) -> Agent:
+	var idx := agents.find_custom(func(x: Agent): return x.id == id)
+	return null if idx == -1 else agents[idx]
+
+func _on_remove_link(link: Link):
+	remove_link(link)
+
+func _on_create_link(agent1_id:int, agent2_id:int):
+	print("CONNECT"+str(agent1_id)+"_"+str(agent2_id))
+
+	if get_link_by_ids(agent1_id, agent2_id) != null:
 		print("LINK ALREADY EXISTS")
 		return
 
 	# Create link
-	create_link(agents[agent1_id-1], agents[agent2_id-1])
+	create_link(get_agent_by_id(agent1_id), get_agent_by_id(agent2_id))
