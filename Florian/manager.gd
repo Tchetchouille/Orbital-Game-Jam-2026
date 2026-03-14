@@ -6,13 +6,11 @@ class_name Manager
 var links: Dictionary[String, Link] = {}
 
 func _ready() -> void:
-	
 	$"../AgentManager".create_link.connect(_on_create_link)
 	
-	
-	create_link(agents[0], agents[1])
-	create_link(agents[1], agents[2])
-	create_link(agents[2], agents[0])
+	# create_link(agents[0], agents[1])
+	# create_link(agents[1], agents[2])
+	# create_link(agents[2], agents[0])
 
 	for i in range(84):
 		do_turn()
@@ -56,7 +54,25 @@ func get_neighbors(agent: Agent) -> Array[Agent]:
 
 func get_other_agent(link: Link, agent: Agent) -> Agent:
 	return link.agent2 if link.agent1 == agent else link.agent1
-	
-	
+
+func get_link_by_ids(agent1_id:int, agent2_id:int) -> Link:
+	if str(agent1_id)+"_"+str(agent2_id) in links:
+		return links[str(agent1_id)+"_"+str(agent2_id)]
+	return null
+
 func _on_create_link(agent1_id:int, agent2_id:int):
 	print("CONNECT"+str(agent1_id)+"_"+str(agent2_id))
+
+	# Ensure agent1_id is smaller than agent2_id
+	# (Order is important for the link key)
+	if agent1_id > agent2_id:
+		var temp = agent1_id
+		agent1_id = agent2_id
+		agent2_id = temp
+
+	if str(agent1_id)+"_"+str(agent2_id) in links:
+		print("LINK ALREADY EXISTS")
+		return
+
+	# Create link
+	create_link(agents[agent1_id-1], agents[agent2_id-1])
