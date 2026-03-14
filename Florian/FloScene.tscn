@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bjftwfr7ggnph" path="res://Florian/max_link_changes.gd" id="4_dbht2"]
 [ext_resource type="Script" uid="uid://e4ihvsw07sqg" path="res://Florian/current_link_changes.gd" id="5_i5w0d"]
 [ext_resource type="Script" uid="uid://c3njspqmfo2oy" path="res://Florian/days.gd" id="6_glbe3"]
+[ext_resource type="Texture2D" uid="uid://d1o4oq1824epc" path="res://Mei/fond_acier/fond_acier.png" id="7_koeba"]
 
 [node name="FloScene" type="Node2D" unique_id=1412494028]
 
@@ -70,3 +71,11 @@ offset_right = 1120.0
 offset_bottom = 42.0
 text = "Day 0"
 script = ExtResource("6_glbe3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277658167]
+z_index = -4096
+texture_repeat = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_koeba")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000000, 14140000)
