@@ -13,7 +13,7 @@ background = NodePath("Background")
 [node name="Portrait" type="Sprite2D" parent="." unique_id=970463603]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1336759345]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_jcr1x")
 
 [node name="AgentArea" parent="." unique_id=1002194706 instance=ExtResource("3_jcr1x")]

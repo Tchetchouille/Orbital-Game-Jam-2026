@@ -46,7 +46,7 @@ func propagate_alignment(agent: Agent, neighbors: Array[Agent]) -> float:
 	var last_align = agent.alignment
 	var new_align = 0 + agent.alignment
 	for neighbour in neighbors:
-		new_align += ((cos(last_align)**2)*neighbour.alignment)/(len(neighbors)**3)
+		new_align += ((cos(last_align)*abs(cos(last_align)))*neighbour.alignment)/(len(neighbors)**3)
 		if abs(new_align)>=1:
 			new_align = -1 if new_align<0 else 1
 	return new_align
