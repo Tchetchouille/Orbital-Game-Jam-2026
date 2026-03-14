@@ -1,16 +1,12 @@
 [gd_scene format=3 uid="uid://oo0gydwe3xqd"]
 
 [ext_resource type="Script" uid="uid://bdpsxk3fab3af" path="res://Jeremias/Scenes/agent.gd" id="1_bwk34"]
-[ext_resource type="Texture2D" uid="uid://carwaymivooak" path="res://icon.svg" id="1_o7o53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_id82k"]
 radius = 84.0238
 
-[node name="Agent" type="Area2D" unique_id=1002194706]
+[node name="AgentArea" type="Area2D" unique_id=1002194706]
 script = ExtResource("1_bwk34")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=316297673]
-texture = ExtResource("1_o7o53")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1523435971]
 shape = SubResource("CircleShape2D_id82k")

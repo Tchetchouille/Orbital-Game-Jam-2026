@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://itypiribyi1l"]
 
-[ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent.tscn" id="1_34624"]
+[ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent_area.tscn" id="1_34624"]
 [ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="1_hiwk3"]
 
 [node name="TestScene" type="Node2D" unique_id=451498883]
