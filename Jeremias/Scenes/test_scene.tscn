@@ -1,14 +1,7 @@
 [gd_scene format=3 uid="uid://itypiribyi1l"]
 
-[ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent_area.tscn" id="1_34624"]
-[ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="1_hiwk3"]
+[ext_resource type="PackedScene" uid="uid://crnpu2jv4scna" path="res://Florian/FloScene.tscn" id="1_34624"]
 
 [node name="TestScene" type="Node2D" unique_id=451498883]
 
-[node name="AgentManager" parent="." unique_id=5807801 instance=ExtResource("1_hiwk3")]
-
-[node name="Agent" parent="AgentManager" unique_id=1002194706 instance=ExtResource("1_34624")]
-position = Vector2(300, 177)
-
-[node name="Agent2" parent="AgentManager" unique_id=728664964 instance=ExtResource("1_34624")]
-position = Vector2(461, 419)
+[node name="FloScene" parent="." unique_id=1412494028 instance=ExtResource("1_34624")]
