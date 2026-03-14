@@ -85,6 +85,10 @@ func _on_remove_link(link: Link):
 	if link.created_by_player:
 		link_changes_this_turn -= 1
 	else:
+		if link_changes_this_turn >= max_link_changes_per_turn:
+			link_change_reached_max.emit(link_changes_this_turn)
+			print("MAX LINK CHANGES PER TURN REACHED")
+			return
 		link_changes_this_turn += 1
 	remove_link(link)
 
