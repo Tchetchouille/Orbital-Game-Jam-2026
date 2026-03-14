@@ -30,7 +30,7 @@ func _ready():
 			node.modulate = Color(randf(), randf(), randf(),1)
 			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
 		elif feature == "hair":
-			node.z_index=2
+			node.z_index=4
 			var random_obj = features[feature].pick_random()
 			random_obj = random_obj.substr(0,len(random_obj) - 5)
 			random_obj += str(head_nbr)+".png"
@@ -38,8 +38,17 @@ func _ready():
 			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
 		elif feature == "eye": 
 			node.z_index =3
+			eye_nbr=randi_range(1, 4)
 			var random_obj = features[feature].pick_random()
+			random_obj = random_obj.substr(0,len(random_obj) - 5)
+			random_obj += str(eye_nbr)+".png"
 			node.modulate = Color(randf(), randf(), randf(),1)
+			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
+		elif feature =="fond_eye":
+			node.z_index =2
+			var random_obj = features[feature].pick_random()
+			random_obj = random_obj.substr(0,len(random_obj) - 5)
+			random_obj += str(eye_nbr)+".png"
 			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
 		else:
 			node.z_index =2
