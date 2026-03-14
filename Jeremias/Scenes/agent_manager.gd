@@ -10,6 +10,48 @@ var line : Line2D
 signal create_link(agent_a, agent_b)
 signal delete_link(link)
 
+# Checks if point q lies on segment pr (collinear case).
+func _on_segment(p: Vector2, q: Vector2, r: Vector2) -> bool:
+	return (
+		q.x <= max(p.x, r.x)
+		and q.x >= min(p.x, r.x)
+		and q.y <= max(p.y, r.y)
+		and q.y >= min(p.y, r.y)
+	)
+
+# Returns orientation for ordered triplet (p, q, r):
+# 0 = collinear, 1 = clockwise, 2 = counterclockwise.
+func _orientation(p: Vector2, q: Vector2, r: Vector2) -> int:
+	var val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y)
+
+	if is_zero_approx(val):
+		return 0
+
+	return 1 if val > 0.0 else 2
+
+# Segment intersection test adapted from orientation method.
+func _segments_intersect(p1: Vector2, q1: Vector2, p2: Vector2, q2: Vector2) -> bool:
+	var o1 = _orientation(p1, q1, p2)
+	var o2 = _orientation(p1, q1, q2)
+	var o3 = _orientation(p2, q2, p1)
+	var o4 = _orientation(p2, q2, q1)
+
+	# General case.
+	if o1 != o2 and o3 != o4:
+		return true
+
+	# Special collinear cases.
+	if o1 == 0 and _on_segment(p1, p2, q1):
+		return true
+	if o2 == 0 and _on_segment(p1, q2, q1):
+		return true
+	if o3 == 0 and _on_segment(p2, p1, q2):
+		return true
+	if o4 == 0 and _on_segment(p2, q1, q2):
+		return true
+
+	return false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	drawing = false
@@ -55,15 +97,14 @@ func end_line():
 				if hovered_agent != start_agent:
 					create_link.emit(start_agent.get_parent().id, hovered_agent.get_parent().id)
 			elif hovered_agent == null and start_agent == null:
-				var line_length = line.points[0].distance_to(line.points[1])
+				var draw_start = line.points[0]
+				var draw_end = line.points[1]
 				for link in $"../Manager".get_children():
-					print(link)
-					var slope_a = (line.points[1] - line.points[0]).normalized()
-					var slope_b = (link.agent2.position - link.agent1.position).normalized()
-					var intersect = Geometry2D.line_intersects_line(line.points[0], slope_a, link.agent1.position, slope_b)
-					var intersect_length = line.points[0].distance_to(intersect)
-					if(line_length >= intersect_length):
+					var link_start = link.agent1.global_position
+					var link_end = link.agent2.global_position
+					if _segments_intersect(draw_start, draw_end, link_start, link_end):
 						delete_link.emit(link)
+						print("LINK DELETED" + str(link))
 		drawing = false
 		start_agent = null
 		print("END")
