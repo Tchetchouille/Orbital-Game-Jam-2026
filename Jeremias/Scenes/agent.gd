@@ -1,11 +1,15 @@
 extends Area2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+signal mouse_enter_agent(id)
+signal mouse_exit_agent()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+
+func _on_mouse_entered() -> void:
+	mouse_enter_agent.emit(self)
+
+
+
+func _on_mouse_exited() -> void:
+	mouse_exit_agent.emit()

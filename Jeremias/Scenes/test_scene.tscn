@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://itypiribyi1l"]
 
 [ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent.tscn" id="1_34624"]
+[ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="1_hiwk3"]
 
 [node name="TestScene" type="Node2D" unique_id=451498883]
 
-[node name="Nodes" type="Node2D" parent="." unique_id=1678078933]
+[node name="AgentManager" parent="." unique_id=5807801 instance=ExtResource("1_hiwk3")]
 
-[node name="Node" parent="Nodes" unique_id=1002194706 instance=ExtResource("1_34624")]
-position = Vector2(-310, -88)
+[node name="Agent" parent="AgentManager" unique_id=1002194706 instance=ExtResource("1_34624")]
+position = Vector2(300, 177)
 
-[node name="Node2" parent="Nodes" unique_id=1480856627 instance=ExtResource("1_34624")]
-position = Vector2(268, -127)
-
-[node name="Node3" parent="Nodes" unique_id=1178133986 instance=ExtResource("1_34624")]
-position = Vector2(20, 348)
+[node name="Agent2" parent="AgentManager" unique_id=728664964 instance=ExtResource("1_34624")]
+position = Vector2(461, 419)

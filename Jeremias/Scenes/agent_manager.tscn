@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c1x52lgc3riqg"]
+
+[ext_resource type="Script" uid="uid://db5u0exdrap0h" path="res://Jeremias/Scenes/agent_manager.gd" id="1_cusjq"]
+
+[node name="AgentManager" type="Node2D" unique_id=1217197740]
+script = ExtResource("1_cusjq")
