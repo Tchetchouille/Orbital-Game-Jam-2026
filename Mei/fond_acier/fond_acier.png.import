@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b855xux1rlg6v"
-path="res://.godot/imported/head_C_1.png-4f1654e2c79a0f8b8df895545b13c547.ctex"
+uid="uid://d1o4oq1824epc"
+path="res://.godot/imported/fond_acier.png-7b35597484152d12b0b72d5dc743c2a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Mei/poubelle/head_C_1.png"
-dest_files=["res://.godot/imported/head_C_1.png-4f1654e2c79a0f8b8df895545b13c547.ctex"]
+source_file="res://Mei/fond_acier/fond_acier.png"
+dest_files=["res://.godot/imported/fond_acier.png-7b35597484152d12b0b72d5dc743c2a4.ctex"]
 
 [params]
 
