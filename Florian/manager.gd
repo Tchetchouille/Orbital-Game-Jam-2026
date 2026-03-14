@@ -6,6 +6,10 @@ class_name Manager
 var links: Dictionary[String, Link] = {}
 
 func _ready() -> void:
+	
+	$"../AgentManager".create_link.connect(_on_create_link)
+	
+	
 	create_link(agents[0], agents[1])
 	create_link(agents[1], agents[2])
 	create_link(agents[2], agents[0])
@@ -52,3 +56,7 @@ func get_neighbors(agent: Agent) -> Array[Agent]:
 
 func get_other_agent(link: Link, agent: Agent) -> Agent:
 	return link.agent2 if link.agent1 == agent else link.agent1
+	
+	
+func _on_create_link(agent1_id:int, agent2_id:int):
+	print("CONNECT"+str(agent1_id)+"_"+str(agent2_id))
