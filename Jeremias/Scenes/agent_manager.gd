@@ -1,5 +1,7 @@
 extends Node2D
 
+# NOTE : "Agents" here are actually the area of the agent nodes.
+
 var agents : Array
 var hovered_agent : Area2D
 var drawing : bool
@@ -39,7 +41,7 @@ func start_line(agent):
 		line.add_point(hovered_agent.global_position)
 		line.add_point(get_global_mouse_position())
 		$"..".add_child(line)
-		start_agent = hovered_agent
+		start_agent = hovered_agent.get_parent()
 		drawing = true
 
 func end_line():
@@ -47,6 +49,6 @@ func end_line():
 		if line != null:
 			$"..".remove_child(line)
 			if hovered_agent != null:
-				create_link.emit(start_agent, hovered_agent)
+				create_link.emit(start_agent.get_parent().id, hovered_agent.get_parent().id)
 				print("create link")
 		drawing = false
