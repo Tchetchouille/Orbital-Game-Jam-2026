@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://y7la2qy4e57o"]
+
+[ext_resource type="Script" uid="uid://cigvrp7scjsuu" path="res://Colin/area_2d.gd" id="1_wf3vl"]
+[ext_resource type="Script" uid="uid://6t84eo1dw0dc" path="res://Colin/character_body_2d.gd" id="2_ia1c4"]
+[ext_resource type="Script" uid="uid://djix6tixeah3f" path="res://Colin/node.gd" id="3_ia1c4"]
+
+[node name="Vertix" type="Node2D" unique_id=805469578]
+position = Vector2(407, 274)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1181301804]
+position = Vector2(292, 110)
+script = ExtResource("1_wf3vl")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1318020579]
+position = Vector2(190, 86)
+script = ExtResource("2_ia1c4")
+
+[node name="perso_generator" type="Node" parent="." unique_id=1264615309]
+script = ExtResource("3_ia1c4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2046831135]
+modulate = Color(0.80552685, 0.8563542, 0.24642491, 1)
+position = Vector2(350, 178)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1985895855]
+position = Vector2(-411, -275)
+zoom = Vector2(0.5, 0.5)
