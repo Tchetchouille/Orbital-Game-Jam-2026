@@ -38,6 +38,7 @@ func agent_exited():
 func start_line(agent):
 	if not drawing:
 		line = Line2D.new()
+		line.z_index = -1000
 		line.add_point(hovered_agent.global_position)
 		line.add_point(get_global_mouse_position())
 		$"..".add_child(line)
