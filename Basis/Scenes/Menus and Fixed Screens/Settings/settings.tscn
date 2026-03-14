@@ -1,0 +1,293 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6a0omriek8no"]
+
+[ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="1_m30en"]
+[ext_resource type="Script" uid="uid://c6jq6ke2esu5l" path="res://Basis/Scenes/Menus and Fixed Screens/Settings/back_button.gd" id="1_tsn7x"]
+[ext_resource type="Script" uid="uid://do2x3irxjt3hu" path="res://Basis/Scenes/Menus and Fixed Screens/Settings/settings_text.gd" id="2_5ytmp"]
+[ext_resource type="Script" uid="uid://bnd0ag8w1luvy" path="res://Basis/Scenes/Menus and Fixed Screens/Settings/main_volume.gd" id="2_mjyko"]
+[ext_resource type="Script" uid="uid://c45di1cfwj5ua" path="res://Basis/Scenes/Menus and Fixed Screens/Settings/music_volume.gd" id="3_mjyko"]
+[ext_resource type="Script" uid="uid://crokoyx7t8w0a" path="res://Basis/Scenes/Menus and Fixed Screens/Settings/full_screen_button.gd" id="7_truu1"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[node name="GlobalContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftMargin" type="Control" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="BackButtonContainer" type="VBoxContainer" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="TopMargin" type="Control" parent="GlobalContainer/BackButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="BackButton" type="Button" parent="GlobalContainer/BackButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "BACK"
+script = ExtResource("1_tsn7x")
+
+[node name="BottomMargin" type="Control" parent="GlobalContainer/BackButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Separator" type="Control" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="MenuContainer" type="VBoxContainer" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="TopMargin" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="AudioTitle" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="GlobalContainer/MenuContainer/AudioTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioText" type="RichTextLabel" parent="GlobalContainer/MenuContainer/AudioTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m30en")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "AUDIO"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_5ytmp")
+
+[node name="AudioSeparator" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="MainVolume" type="HBoxContainer" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_mjyko")
+
+[node name="MainVolumeText" type="RichTextLabel" parent="GlobalContainer/MenuContainer/MainVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_m30en")
+text = "Main Volume"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_5ytmp")
+ratio = 0.05
+
+[node name="Separator" type="Control" parent="GlobalContainer/MenuContainer/MainVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="HSlider" type="HSlider" parent="GlobalContainer/MenuContainer/MainVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 100.0
+
+[node name="AudioSeparator2" type="HSeparator" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MusicVolume" type="HBoxContainer" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_mjyko")
+
+[node name="MusicVolumeText" type="RichTextLabel" parent="GlobalContainer/MenuContainer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_m30en")
+text = "Music Volume"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_5ytmp")
+ratio = 0.05
+
+[node name="Separator" type="Control" parent="GlobalContainer/MenuContainer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="HSlider" type="HSlider" parent="GlobalContainer/MenuContainer/MusicVolume"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+max_value = 80.0
+value = 80.0
+
+[node name="AudioSeparator3" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="VideoTitle" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="GlobalContainer/MenuContainer/VideoTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoText" type="RichTextLabel" parent="GlobalContainer/MenuContainer/VideoTitle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m30en")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "VIDEO"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_5ytmp")
+
+[node name="VideoSeparator" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="FullScreen" type="HBoxContainer" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FullScreenText" type="RichTextLabel" parent="GlobalContainer/MenuContainer/FullScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Full Screen"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_5ytmp")
+ratio = 0.05
+
+[node name="Separator" type="Control" parent="GlobalContainer/MenuContainer/FullScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="CheckBoxContainer" type="GridContainer" parent="GlobalContainer/MenuContainer/FullScreen"]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="Empty" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty3" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty2" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty4" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_m30en")
+toggle_mode = true
+text = "OFF"
+script = ExtResource("7_truu1")
+
+[node name="Empty5" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty6" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty7" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Empty8" type="Control" parent="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BottomMargin" type="Control" parent="GlobalContainer/MenuContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="RightMargin" type="Control" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[connection signal="pressed" from="GlobalContainer/BackButtonContainer/BackButton" to="GlobalContainer/BackButtonContainer/BackButton" method="_on_pressed"]
+[connection signal="value_changed" from="GlobalContainer/MenuContainer/MainVolume/HSlider" to="GlobalContainer/MenuContainer/MainVolume" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="GlobalContainer/MenuContainer/MusicVolume/HSlider" to="GlobalContainer/MenuContainer/MusicVolume" method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer/Button" to="GlobalContainer/MenuContainer/FullScreen" method="_on_check_box_2_toggled"]
+[connection signal="toggled" from="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer/Button" to="GlobalContainer/MenuContainer/FullScreen/CheckBoxContainer/Button" method="_on_toggled"]

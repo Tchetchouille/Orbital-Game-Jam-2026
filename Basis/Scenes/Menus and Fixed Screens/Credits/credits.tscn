@@ -1,0 +1,171 @@
+[gd_scene load_steps=3 format=3 uid="uid://xi56kiiotqrn"]
+
+[ext_resource type="Script" uid="uid://c6jq6ke2esu5l" path="res://Basis/Scenes/Menus and Fixed Screens/Settings/back_button.gd" id="1_ryj2r"]
+[ext_resource type="Script" uid="uid://dstflxya5arvv" path="res://Basis/Scenes/Menus and Fixed Screens/Credits/credits_text.gd" id="2_l2pkk"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.176419, 0.176419, 0.176419, 1)
+
+[node name="GlobalContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LeftMargin" type="Control" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="BackButtonContainer" type="VBoxContainer" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.8
+
+[node name="TopMargin" type="Control" parent="GlobalContainer/BackButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="BackButton" type="Button" parent="GlobalContainer/BackButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "BACK"
+script = ExtResource("1_ryj2r")
+
+[node name="BottomMargin" type="Control" parent="GlobalContainer/BackButtonContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Separator" type="Control" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="CreditsList" type="VBoxContainer" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="TopMargin" type="Control" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameDesign" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "GAME DESIGN"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_l2pkk")
+ratio = 0.03
+
+[node name="GameDesignPeople" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+scroll_active = false
+script = ExtResource("2_l2pkk")
+ratio = 0.01
+
+[node name="Programming" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "PROGRAMMING"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_l2pkk")
+ratio = 0.03
+
+[node name="ProgrammingPeople" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+scroll_active = false
+script = ExtResource("2_l2pkk")
+ratio = 0.01
+
+[node name="Visuals" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "VISUALS"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_l2pkk")
+ratio = 0.03
+
+[node name="VisualsPeople" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+scroll_active = false
+script = ExtResource("2_l2pkk")
+ratio = 0.01
+
+[node name="Music" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "MUSIC"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_l2pkk")
+ratio = 0.03
+
+[node name="MusicPeople" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+scroll_active = false
+script = ExtResource("2_l2pkk")
+ratio = 0.01
+
+[node name="Sounds" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "SOUNDS"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_l2pkk")
+ratio = 0.03
+
+[node name="SoundsPeople" type="RichTextLabel" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+scroll_active = false
+script = ExtResource("2_l2pkk")
+ratio = 0.01
+
+[node name="BottomMargin" type="Control" parent="GlobalContainer/CreditsList"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightMargin" type="Control" parent="GlobalContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
+
+[connection signal="pressed" from="GlobalContainer/BackButtonContainer/BackButton" to="GlobalContainer/BackButtonContainer/BackButton" method="_on_pressed"]

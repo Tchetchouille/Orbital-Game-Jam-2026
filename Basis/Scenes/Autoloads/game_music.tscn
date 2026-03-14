@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc5xaxhnkctet"]
+
+[ext_resource type="AudioStream" uid="uid://dhfyvmj0sqdla" path="res://Basis/Musics/Sincerely.mp3" id="1_j78nv"]
+
+[node name="GameMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_j78nv")
+autoplay = true

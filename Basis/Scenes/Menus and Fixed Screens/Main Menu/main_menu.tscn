@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://ch8r62r4ujff8"]
+
+[ext_resource type="Theme" uid="uid://ks7w64dlvxp7" path="res://Basis/Themes/main_menu_theme.tres" id="1_7av57"]
+[ext_resource type="Script" uid="uid://c3bta6viqadqm" path="res://Basis/Scenes/Menus and Fixed Screens/Main Menu/title.gd" id="2_rrvhe"]
+[ext_resource type="Script" uid="uid://d10axnuoq2sxa" path="res://Basis/Scenes/Menus and Fixed Screens/Main Menu/buttons.gd" id="3_jb0cv"]
+
+[node name="MainMenu" type="Control" unique_id=2092141121]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1875041727]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.454524, 0.454524, 0.454524, 1)
+
+[node name="MarginContainer" type="HBoxContainer" parent="." unique_id=528984857]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=914894675]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopMargin" type="Control" parent="MarginContainer/VBoxContainer" unique_id=556797450]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Title" type="RichTextLabel" parent="MarginContainer/VBoxContainer" unique_id=1953580926]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("1_7av57")
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=6.0 connected=1]GAME NAME[/wave]"
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_rrvhe")
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1274011536]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="MarginContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=341739649]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="LeftMargin" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=503467575]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="Buttons" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=788371059]
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("3_jb0cv")
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=824461729]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_7av57")
+text = "PLAY"
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=1468231922]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Settings" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=952362619]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_7av57")
+text = "SETTINGS
+"
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=380024205]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Credits" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=1212941156]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_7av57")
+text = "CREDITS
+"
+
+[node name="Separator3" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=1310509178]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/Buttons" unique_id=563851103]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_7av57")
+text = "QUIT"
+
+[node name="RightMargin" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer" unique_id=1785793397]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="BottomMargin" type="Control" parent="MarginContainer/VBoxContainer" unique_id=64152827]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/Play" to="MarginContainer/VBoxContainer/MarginContainer/Buttons" method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/Settings" to="MarginContainer/VBoxContainer/MarginContainer/Buttons" method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/Credits" to="MarginContainer/VBoxContainer/MarginContainer/Buttons" method="_on_credits_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/Buttons/Quit" to="MarginContainer/VBoxContainer/MarginContainer/Buttons" method="_on_quit_pressed"]
