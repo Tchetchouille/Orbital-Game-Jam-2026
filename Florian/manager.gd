@@ -8,10 +8,12 @@ var links: Dictionary[String, Link] = {}
 
 var max_link_changes_per_turn: int = 1
 var link_changes_this_turn: int = 0
+var days_passed: int = 0
 
 signal link_change_reached_max(link_changes_this_turn: int)
 signal link_changes_changed(new_link_changes_this_turn: int)
 signal link_changes_max_changed(new_max_link_changes_per_turn: int)
+signal days_passed_changed(new_days_passed: int)
 
 func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
@@ -138,6 +140,8 @@ func _on_go_button_pressed() -> void:
 
 	for i in range(7):
 		do_simulation_turn()
-		await get_tree().create_timer(0.1).timeout
-	
+		await get_tree().create_timer(0.25).timeout
+		days_passed += 1
+		days_passed_changed.emit(days_passed)
+
 	go_button.disabled = false
