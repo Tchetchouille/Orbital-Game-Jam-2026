@@ -18,4 +18,3 @@ func _on_toggled(toggled_on: bool) -> void:
 			text = "ON"
 		false:
 			text = "OFF"
-	print(text)
