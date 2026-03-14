@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://fcav3uxj0gbf"]
+
+[ext_resource type="Script" uid="uid://g5npx1wf1xxf" path="res://Florian/link.gd" id="1_2putj"]
+
+[node name="Link" type="Line2D" unique_id=1494003192]
+script = ExtResource("1_2putj")

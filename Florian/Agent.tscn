@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b5slj5wfmqsbo"]
+
+[ext_resource type="Script" uid="uid://bokrped5eme4x" path="res://Florian/agent.gd" id="1_6ei7d"]
+[ext_resource type="Texture2D" uid="uid://carwaymivooak" path="res://icon.svg" id="1_g0r8e"]
+
+[node name="Agent" type="Node2D" unique_id=1399513064]
+script = ExtResource("1_6ei7d")
+alignment = 1.0
+background_path = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1336759345]
+texture = ExtResource("1_g0r8e")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://crnpu2jv4scna"]
+
+[ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="1_s6c6e"]
+[ext_resource type="Script" uid="uid://blx7c2ppgex6x" path="res://Florian/manager.gd" id="2_dbht2"]
+[ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="2_y8mri"]
+
+[node name="FloScene" type="Node2D" unique_id=1412494028]
+
+[node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("agents") instance=ExtResource("1_s6c6e")]
+script = ExtResource("2_dbht2")
+agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3")]
+
+[node name="Agent1" parent="." unique_id=1399513064 instance=ExtResource("2_y8mri")]
+position = Vector2(371, 137)
+id = 1
+
+[node name="Agent2" parent="." unique_id=1093525604 instance=ExtResource("2_y8mri")]
+position = Vector2(206, 520)
+alignment = -0.877
+id = 2
+
+[node name="Agent3" parent="." unique_id=711883341 instance=ExtResource("2_y8mri")]
+position = Vector2(874, 255)
+alignment = 0.4
+id = 3
