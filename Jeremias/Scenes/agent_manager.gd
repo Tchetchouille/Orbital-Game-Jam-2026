@@ -41,7 +41,7 @@ func start_line(agent):
 		line.add_point(hovered_agent.global_position)
 		line.add_point(get_global_mouse_position())
 		$"..".add_child(line)
-		start_agent = hovered_agent.get_parent()
+		start_agent = hovered_agent
 		drawing = true
 
 func end_line():
@@ -50,5 +50,4 @@ func end_line():
 			$"..".remove_child(line)
 			if hovered_agent != null:
 				create_link.emit(start_agent.get_parent().id, hovered_agent.get_parent().id)
-				print("create link")
 		drawing = false
