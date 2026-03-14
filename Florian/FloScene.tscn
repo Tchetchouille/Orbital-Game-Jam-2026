@@ -3,11 +3,40 @@
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="1_s6c6e"]
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="2_y8mri"]
 [ext_resource type="PackedScene" path="res://Jeremias/Scenes/agent_manager.tscn" id="3_y8mri"]
+[ext_resource type="Script" uid="uid://bjftwfr7ggnph" path="res://Florian/max_link_changes.gd" id="4_dbht2"]
+[ext_resource type="Script" uid="uid://e4ihvsw07sqg" path="res://Florian/current_link_changes.gd" id="5_i5w0d"]
 
 [node name="FloScene" type="Node2D" unique_id=1412494028]
 
-[node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("agents") instance=ExtResource("1_s6c6e")]
+[node name="MaxLinkChanges" type="Label" parent="." unique_id=1232914665]
+offset_left = 419.0
+offset_top = 1.0
+offset_right = 459.0
+offset_bottom = 24.0
+text = "99"
+script = ExtResource("4_dbht2")
+
+[node name="Slash" type="Label" parent="." unique_id=260281549]
+offset_left = 409.0
+offset_top = 2.0
+offset_right = 449.0
+offset_bottom = 25.0
+text = "/"
+
+[node name="CurrentLinkChanges" type="Label" parent="." unique_id=1095696831]
+offset_left = 363.0
+offset_top = 2.0
+offset_right = 403.0
+offset_bottom = 25.0
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("5_i5w0d")
+
+[node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("go_button", "agents") instance=ExtResource("1_s6c6e")]
+go_button = NodePath("../Control")
 agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3"), NodePath("../Agent4")]
+
+[node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("3_y8mri")]
 
 [node name="Agent1" parent="." unique_id=1399513064 instance=ExtResource("2_y8mri")]
 position = Vector2(371, 137)
@@ -23,8 +52,12 @@ position = Vector2(874, 255)
 alignment = 0.4
 id = 3
 
-[node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("3_y8mri")]
-
 [node name="Agent4" parent="." unique_id=1283355674 instance=ExtResource("2_y8mri")]
 position = Vector2(650, 485)
+alignment = -1.0
 id = 4
+
+[node name="Control" type="Button" parent="." unique_id=230272259]
+offset_right = 105.0
+offset_bottom = 40.0
+text = "Go"
