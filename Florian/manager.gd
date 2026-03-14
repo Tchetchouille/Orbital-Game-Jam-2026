@@ -5,6 +5,11 @@ class_name Manager
 @export var agents: Array[Agent]
 var links: Dictionary[String, Link] = {}
 
+var max_link_changes_per_turn: int = 3
+var link_changes_this_turn: int = 0
+
+signal link_change_reached_max(link_changes_this_turn: int)
+
 func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
 	#$"../AgentManager".remove_link.connect(_on_remove_link)
@@ -17,10 +22,11 @@ func _ready() -> void:
 		await get_tree().create_timer(0.1).timeout
 		print("Turn ", i)
 
-func create_link(agent1: Agent, agent2: Agent) -> void:
+func create_link(agent1: Agent, agent2: Agent, created_by_player: bool = false) -> void:
 	var new_link: Link = Link.new()
 	new_link.set_agents(agent1, agent2)
 	links[str(agent1.id) + "_" + str(agent2.id)] = new_link
+	new_link.set_created_by_player(created_by_player)
 	add_child(new_link)
 
 func remove_link(link: Link) -> void:
@@ -76,6 +82,10 @@ func get_agent_by_id(id: int) -> Agent:
 	return null if idx == -1 else agents[idx]
 
 func _on_remove_link(link: Link):
+	if link.created_by_player:
+		link_changes_this_turn -= 1
+	else:
+		link_changes_this_turn += 1
 	remove_link(link)
 
 func _on_create_link(agent1_id:int, agent2_id:int):
@@ -84,6 +94,13 @@ func _on_create_link(agent1_id:int, agent2_id:int):
 	if get_link_by_ids(agent1_id, agent2_id) != null:
 		print("LINK ALREADY EXISTS")
 		return
+
+	if link_changes_this_turn >= max_link_changes_per_turn:
+		link_change_reached_max.emit(link_changes_this_turn)
+		print("MAX LINK CHANGES PER TURN REACHED")
+		return
+	
+	link_changes_this_turn += 1
 
 	# Create link
 	create_link(get_agent_by_id(agent1_id), get_agent_by_id(agent2_id))

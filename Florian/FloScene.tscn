@@ -7,7 +7,7 @@
 [node name="FloScene" type="Node2D" unique_id=1412494028]
 
 [node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("agents") instance=ExtResource("1_s6c6e")]
-agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3")]
+agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3"), NodePath("../Agent4")]
 
 [node name="Agent1" parent="." unique_id=1399513064 instance=ExtResource("2_y8mri")]
 position = Vector2(371, 137)
@@ -24,3 +24,7 @@ alignment = 0.4
 id = 3
 
 [node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("3_y8mri")]
+
+[node name="Agent4" parent="." unique_id=1283355674 instance=ExtResource("2_y8mri")]
+position = Vector2(650, 485)
+id = 4
