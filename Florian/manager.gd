@@ -17,7 +17,7 @@ signal days_passed_changed(new_days_passed: int)
 
 func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
-	#$"../AgentManager".remove_link.connect(_on_remove_link)
+	$"../AgentManager".delete_link.connect(_on_remove_link)
 	go_button.pressed.connect(_on_go_button_pressed)
 	# create_link(agents[0], agents[1])
 	# create_link(agents[1], agents[2])
