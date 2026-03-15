@@ -163,11 +163,14 @@ tracks/5/path = NodePath(".")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 51.866665),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"text_box_change"
+}, {
+"args": [],
+"method": &"play_music"
 }]
 }
 tracks/6/type = "value"

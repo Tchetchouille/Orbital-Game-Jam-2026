@@ -18,6 +18,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 
 func _on_button_pressed() -> void:
+	play_music()
 	get_tree().change_scene_to_file("res://Florian/FloScene.tscn") # aller à la scène
 
 func text_box_change():
@@ -27,3 +28,5 @@ func text_box_change():
 	new_sb.set_border_width_all(5)
 	new_sb.set_corner_radius_all(10)
 	$Control/Label.add_theme_stylebox_override("normal", new_sb)
+func play_music():
+	$"/root/GameMusic".playing = true
