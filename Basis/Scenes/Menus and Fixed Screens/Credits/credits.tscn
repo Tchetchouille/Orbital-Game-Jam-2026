@@ -157,6 +157,8 @@ ratio = 0.03
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+text = "Cut sound effect by Little Creativity from Pixabay
+Rubber sound effect by freesound_community from Pixabay."
 scroll_active = false
 script = ExtResource("2_l2pkk")
 ratio = 0.01
