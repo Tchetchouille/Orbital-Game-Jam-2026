@@ -16,26 +16,26 @@ script = ExtResource("1_rmrn7")
 [node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("3_bxh3r")]
 
 [node name="Agent1" parent="." unique_id=1399513064 instance=ExtResource("4_7t0xi")]
-position = Vector2(194, 184)
+position = Vector2(282, 284)
 alignment = 0.5
 id = 1
 
 [node name="Agent2" parent="." unique_id=1687529793 instance=ExtResource("4_7t0xi")]
-position = Vector2(197, 510)
+position = Vector2(390, 543)
 id = 2
 
 [node name="Agent3" parent="." unique_id=32722420 instance=ExtResource("4_7t0xi")]
-position = Vector2(592, 337)
+position = Vector2(578, 147)
 alignment = -1.0
 id = 3
 
 [node name="Agent4" parent="." unique_id=1826149397 instance=ExtResource("4_7t0xi")]
-position = Vector2(1016, 181)
+position = Vector2(872, 282)
 alignment = -0.30000000000000004
 id = 4
 
 [node name="Agent5" parent="." unique_id=689273678 instance=ExtResource("4_7t0xi")]
-position = Vector2(1019, 498)
+position = Vector2(746, 541)
 alignment = -1.0
 id = 5
 

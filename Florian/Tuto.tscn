@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://c57wm4n6ifkub"]
+[gd_scene format=3 uid="uid://cj2o3ne4m1uvh"]
 
 [ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="1_d4qi2"]
-[ext_resource type="Script" uid="uid://yx47v5ear37n" path="res://Florian/help_button.gd" id="2_rum45"]
+[ext_resource type="Script" path="res://Florian/help_button.gd" id="2_rum45"]
 
 [node name="Tuto" type="Control" unique_id=244726942]
 layout_mode = 3
@@ -54,6 +54,16 @@ offset_top = 8.0
 offset_right = -6.0
 offset_bottom = -9.0
 theme = ExtResource("1_d4qi2")
-text = "Ceci est un tutoriel"
+text = "En haut de l’écran, tu vois le nombre d’actions disponibles.
+Tu peux créer un lien entre deux membres de l’équipage ou couper le lien qui les unit.
+Clique et glisse pour couper ou créer un lien : cela te coûtera une action.
+Cependant, certains liens faits de chaîne ne peuvent pas être coupés.
+
+En dessous de chaque membre de l’équipage, tu vois son score politique.
+Si iel est à 1, la personne est prête à se lancer dans le socialisme.
+Si iel est à –1, la méritocratie et les bitcoins seront ses seuls sujets de conversation.
+
+Quand tu n’as plus d’actions disponibles, appuie sur « go ».
+Pour passer au niveau suivant, il faut que touxtes les membres de l’équipage soient rouges."
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
