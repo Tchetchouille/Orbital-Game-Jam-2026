@@ -11,7 +11,7 @@ func resize_buttons():
 	$Quit.add_theme_font_size_override("font_size", txt_size)
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Basis/Scenes/main.tscn")
+	get_tree().change_scene_to_file("res://Colin/intro_scene.tscn")
 
 func _on_settings_pressed() -> void:
 	get_tree().change_scene_to_file("res://Basis/Scenes/Menus and Fixed Screens/Settings/settings.tscn")

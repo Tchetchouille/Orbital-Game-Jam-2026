@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://crnpu2jv4scna"]
 
+[ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="1_gjdfx"]
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="1_s6c6e"]
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="2_y8mri"]
 [ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="3_y8mri"]
@@ -10,26 +11,49 @@
 
 [node name="FloScene" type="Node2D" unique_id=1412494028]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1971026611]
+z_index = -1
+offset_left = 504.0
+offset_top = 6.0
+offset_right = 668.0
+offset_bottom = 35.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
+
+[node name="Info" type="Label" parent="." unique_id=1526749087]
+offset_left = 515.0
+offset_top = 9.0
+offset_right = 605.0
+offset_bottom = 33.0
+theme = ExtResource("1_gjdfx")
+theme_override_font_sizes/font_size = 28
+text = "Actions :"
+
 [node name="MaxLinkChanges" type="Label" parent="." unique_id=1232914665]
-offset_left = 419.0
-offset_top = 1.0
-offset_right = 459.0
-offset_bottom = 24.0
+offset_left = 639.0
+offset_top = 9.0
+offset_right = 679.0
+offset_bottom = 33.0
+theme = ExtResource("1_gjdfx")
+theme_override_font_sizes/font_size = 28
 text = "99"
 script = ExtResource("4_dbht2")
 
 [node name="Slash" type="Label" parent="." unique_id=260281549]
-offset_left = 409.0
-offset_top = 2.0
-offset_right = 449.0
-offset_bottom = 25.0
+offset_left = 629.0
+offset_top = 9.0
+offset_right = 669.0
+offset_bottom = 33.0
+theme = ExtResource("1_gjdfx")
+theme_override_font_sizes/font_size = 28
 text = "/"
 
 [node name="CurrentLinkChanges" type="Label" parent="." unique_id=1095696831]
-offset_left = 363.0
-offset_top = 2.0
-offset_right = 403.0
-offset_bottom = 25.0
+offset_left = 583.0
+offset_top = 9.0
+offset_right = 623.0
+offset_bottom = 33.0
+theme = ExtResource("1_gjdfx")
+theme_override_font_sizes/font_size = 28
 text = "0"
 horizontal_alignment = 2
 script = ExtResource("5_i5w0d")
@@ -62,15 +86,27 @@ id = 4
 [node name="Control" type="Button" parent="." unique_id=230272259]
 offset_right = 105.0
 offset_bottom = 40.0
+theme = ExtResource("1_gjdfx")
+theme_override_font_sizes/font_size = 24
 text = "Go"
 
 [node name="Days" type="Label" parent="." unique_id=789252677]
-offset_left = 1077.0
-offset_top = 19.0
+offset_left = 1069.0
+offset_top = 11.0
 offset_right = 1120.0
-offset_bottom = 42.0
+offset_bottom = 35.0
+theme = ExtResource("1_gjdfx")
+theme_override_font_sizes/font_size = 28
 text = "Day 0"
 script = ExtResource("6_glbe3")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1154892213]
+z_index = -1
+offset_left = 1062.0
+offset_top = 6.0
+offset_right = 1126.0
+offset_bottom = 35.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277658167]
 z_index = -4096

@@ -14,8 +14,6 @@ signal link_change_reached_max(link_changes_this_turn: int)
 signal link_changes_changed(new_link_changes_this_turn: int)
 signal link_changes_max_changed(new_max_link_changes_per_turn: int)
 signal days_passed_changed(new_days_passed: int)
-signal victory_achieved()
-signal defeat_achieved()
 
 func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
@@ -55,7 +53,7 @@ func propagate_alignment(agent: Agent, neighbors: Array[Agent]) -> float:
 			new_align = -1 if new_align<0 else 1
 	return new_align
 
-func do_simulation_turn() -> void:
+func do_simulation_turn() -> String:
 	# Calculate new alignments for all agents
 	var new_alignments: Dictionary = {}
 	for agent in agents:
@@ -72,9 +70,10 @@ func do_simulation_turn() -> void:
 		else:
 			bool_defeat = false
 	if bool_victory:
-		victory_achieved.emit()
+		return "victory"
 	elif bool_defeat:
-		defeat_achieved.emit()
+		return "defeat"
+	return "nothing"
 func get_neighbors(agent: Agent) -> Array[Agent]:
 	# Find all agents that are connected to the agent by a link
 	var neighbors: Array[Agent] = []
@@ -147,11 +146,20 @@ func _on_go_button_pressed() -> void:
 	link_changes_this_turn = 0
 	link_changes_changed.emit(link_changes_this_turn)
 	link_changes_max_changed.emit(max_link_changes_per_turn)
-
+	var fin_tour
 	for i in range(7):
-		do_simulation_turn()
+		fin_tour = do_simulation_turn()
 		await get_tree().create_timer(0.25).timeout
 		days_passed += 1
 		days_passed_changed.emit(days_passed)
-
+	if fin_tour == "victory":
+		do_victory()
+	elif fin_tour == "defeat":
+		do_defeat()
 	go_button.disabled = false
+ 
+func do_victory():
+	pass
+
+func do_defeat():
+	get_tree().reload_current_scene()

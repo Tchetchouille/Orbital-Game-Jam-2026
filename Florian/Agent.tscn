@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://djix6tixeah3f" path="res://Colin/node.gd" id="2_4hdon"]
 [ext_resource type="Texture2D" uid="uid://qx0xu2l8oyw8" path="res://Mei/hublot/hublot.png" id="2_jcr1x"]
 [ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent_area.tscn" id="3_jcr1x"]
+[ext_resource type="FontFile" uid="uid://dtunaety4j840" path="res://Basis/Fonts/La pétroleuse-Regular.ttf" id="5_4yth7"]
 
 [node name="Agent" type="Node2D" unique_id=1399513064 node_paths=PackedStringArray("portrait", "background")]
 script = ExtResource("1_6ei7d")
@@ -27,5 +28,14 @@ offset_left = -20.0
 offset_top = 50.0
 offset_right = 20.0
 offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("5_4yth7")
 text = "0"
 horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1029882715]
+z_index = -1
+offset_left = -17.0
+offset_top = 47.0
+offset_right = 17.0
+offset_bottom = 65.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)

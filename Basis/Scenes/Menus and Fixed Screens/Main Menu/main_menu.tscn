@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch8r62r4ujff8"]
 
 [ext_resource type="Theme" uid="uid://ks7w64dlvxp7" path="res://Basis/Themes/main_menu_theme.tres" id="1_7av57"]
+[ext_resource type="Texture2D" uid="uid://id4gm66cl87v" path="res://Mei/screen/screen_start.png" id="1_o8jmd"]
 [ext_resource type="Script" uid="uid://c3bta6viqadqm" path="res://Basis/Scenes/Menus and Fixed Screens/Main Menu/title.gd" id="2_rrvhe"]
 [ext_resource type="Script" uid="uid://d10axnuoq2sxa" path="res://Basis/Scenes/Menus and Fixed Screens/Main Menu/buttons.gd" id="3_jb0cv"]
 
@@ -20,6 +21,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.454524, 0.454524, 0.454524, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Background" unique_id=1077715904]
+position = Vector2(579.5, 325)
+scale = Vector2(1.0060763, 1.0092592)
+texture = ExtResource("1_o8jmd")
 
 [node name="MarginContainer" type="HBoxContainer" parent="." unique_id=528984857]
 layout_mode = 1
