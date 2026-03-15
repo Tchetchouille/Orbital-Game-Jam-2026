@@ -15,10 +15,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Orbital Game Jam 2026"
-run/main_scene="uid://ch8r62r4ujff8"
+run/main_scene="uid://j8jt4bj3ya4a"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-boot_splash/bg_color=Color(0.6392157, 0.8627451, 0.41960785, 1)
-boot_splash/image="uid://dgq8fp8jnxptc"
+boot_splash/show_image=false
 config/icon="res://icon.svg"
 boot_splash/minimum_display_time=300
 

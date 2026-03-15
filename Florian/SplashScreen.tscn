@@ -1,0 +1,172 @@
+[gd_scene format=3 uid="uid://j8jt4bj3ya4a"]
+
+[ext_resource type="Script" uid="uid://brfvxwyoc266l" path="res://Florian/splash_screen.gd" id="1_l14g6"]
+[ext_resource type="Texture2D" uid="uid://cdnm2onstdwg7" path="res://Mei/spritesheet_explosion/explosion_sprite_sheet.png" id="1_xja1i"]
+[ext_resource type="Texture2D" uid="uid://d1o4oq1824epc" path="res://Mei/fond_acier/fond_acier.png" id="2_jl4vb"]
+[ext_resource type="Theme" uid="uid://ks7w64dlvxp7" path="res://Basis/Themes/main_menu_theme.tres" id="3_2ao7x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl4vb"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(0, 0, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ao7x"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(728, 0, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l14g6"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(1456, 0, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8ppv"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(2184, 0, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uivw3"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(0, 728, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhrnh"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(728, 728, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfkse"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(1456, 728, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f3o0"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(2184, 728, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvjxn"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(0, 1456, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n01st"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(728, 1456, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04t6g"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(1456, 1456, 728, 728)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e177r"]
+atlas = ExtResource("1_xja1i")
+region = Rect2(2184, 1456, 728, 728)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_00amg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jl4vb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ao7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l14g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8ppv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uivw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhrnh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfkse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f3o0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yvjxn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n01st")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04t6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e177r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_2ao7x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jl4vb"]
+resource_name = "Splash"
+length = 4.3
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.39999998, 4.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2ao7x"]
+_data = {
+&"RESET": SubResource("Animation_2ao7x"),
+&"Splash": SubResource("Animation_jl4vb")
+}
+
+[node name="SplashScreen" type="Node2D" unique_id=1015090013]
+script = ExtResource("1_l14g6")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1973700699]
+offset_right = 1152.0
+offset_bottom = 658.0
+color = Color(0.13137859, 0.13137859, 0.13137859, 1)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=315240066]
+visible = false
+position = Vector2(622.58276, 433.5)
+scale = Vector2(0.64002824, 0.64002836)
+texture = ExtResource("2_jl4vb")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=830950013]
+position = Vector2(581.00006, 347)
+scale = Vector2(1.4093406, 1.4093406)
+sprite_frames = SubResource("SpriteFrames_00amg")
+autoplay = "default"
+frame_progress = 0.68581474
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1179344976]
+libraries/ = SubResource("AnimationLibrary_2ao7x")
+autoplay = &"Splash"
+
+[node name="Label" type="Label" parent="." unique_id=518816123]
+offset_left = 275.0
+offset_top = 271.0
+offset_right = 869.0
+offset_bottom = 461.0
+theme = ExtResource("3_2ao7x")
+theme_override_font_sizes/font_size = 150
+text = "GAME NAME"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
