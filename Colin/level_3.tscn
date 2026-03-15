@@ -103,14 +103,6 @@ theme_override_font_sizes/font_size = 28
 text = "Day 0"
 script = ExtResource("8_642yj")
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=376667587]
-z_index = -1
-offset_left = 1062.0
-offset_top = 6.0
-offset_right = 1126.0
-offset_bottom = 35.0
-color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=752984048]
 z_index = -4096
 texture_repeat = 2
@@ -122,3 +114,11 @@ region_rect = Rect2(0, 0, 20000000, 14140000)
 [node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("go_button", "agents") instance=ExtResource("2_utsdf")]
 go_button = NodePath("../Control")
 agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3"), NodePath("../Agent4"), NodePath("../Agent5")]
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=161440368]
+z_index = -1
+offset_left = 1062.0
+offset_top = 6.0
+offset_right = 1141.0
+offset_bottom = 35.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)

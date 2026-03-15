@@ -170,7 +170,7 @@ func do_victory():
 			get_tree().set_meta("next_scene","res://Colin/level_3.tscn")
 			get_tree().change_scene_to_file("res://Colin/level_transition.tscn")
 		"res://Colin/level_3.tscn":
-			get_tree().set_meta("next_scene","res://Basis/Scenes/Menus and Fixed Screens/Main Menu/main_menu.tscn")
+			get_tree().set_meta("next_scene","res://Colin/victory.tscn")
 			get_tree().change_scene_to_file("res://Colin/level_transition.tscn")
 func do_defeat():
 	get_tree().set_meta("last_scene", get_tree().current_scene.scene_file_path)

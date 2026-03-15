@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dn1x0juvhtt63"]
+
+[ext_resource type="Script" uid="uid://de3f11os2iibn" path="res://Colin/victory.gd" id="1_6ysml"]
+[ext_resource type="Texture2D" uid="uid://bhih5m52yrwsl" path="res://Mei/screen/screen_end_victory.png" id="1_rmjie"]
+[ext_resource type="Theme" uid="uid://ks7w64dlvxp7" path="res://Basis/Themes/main_menu_theme.tres" id="2_6ysml"]
+
+[node name="Victory" type="Node2D" unique_id=850903807]
+script = ExtResource("1_6ysml")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=232553414]
+position = Vector2(578.50006, 327)
+scale = Vector2(1.0043403, 1.0092592)
+texture = ExtResource("1_rmjie")
+
+[node name="Label2" type="Label" parent="." unique_id=2053609451]
+offset_left = 174.0
+offset_top = 468.0
+offset_right = 984.0
+offset_bottom = 633.0
+theme = ExtResource("2_6ysml")
+theme_override_font_sizes/font_size = 45
+text = "Vous avez réussi à collectiviser les ressources et vous entraider. Peut-etre redéfinirez-vous un monde meilleur ?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=651340996]
+offset_left = 335.0
+offset_top = 45.0
+offset_right = 884.0
+offset_bottom = 306.0
+theme = ExtResource("2_6ysml")
+bbcode_enabled = true
+text = "[wave amp=80.0 freq=4.0 connected=1]Victoire ?[/wave]"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1054168622]
+offset_left = 425.0
+offset_top = 337.0
+offset_right = 735.0
+offset_bottom = 468.0
+theme = ExtResource("2_6ysml")
+text = "Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -30,14 +30,6 @@ theme_override_font_sizes/font_size = 28
 text = "Day 0"
 script = ExtResource("7_tuatt")
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=300679720]
-z_index = -1
-offset_left = 1062.0
-offset_top = 6.0
-offset_right = 1126.0
-offset_bottom = 35.0
-color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=933472278]
 z_index = -4096
 texture_repeat = 2
@@ -136,3 +128,11 @@ alignment = -0.6
 id = 7
 
 [node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("5_4fgjm")]
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=359447023]
+z_index = -1
+offset_left = 1062.0
+offset_top = 6.0
+offset_right = 1141.0
+offset_bottom = 35.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
