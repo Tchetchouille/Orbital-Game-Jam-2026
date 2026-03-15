@@ -142,6 +142,9 @@ func _on_go_button_pressed() -> void:
 	for agent in agents:
 		if agent.alignment > 0:
 			new_budget += 1
+	
+	if new_budget > 3:
+		new_budget = 3
 
 	max_link_changes_per_turn = new_budget
 	link_changes_this_turn = 0
