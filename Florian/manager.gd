@@ -19,7 +19,7 @@ func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
 	$"../AgentManager".delete_link.connect(_on_remove_link)
 	go_button.pressed.connect(_on_go_button_pressed)
-	create_link(agents[0], agents[1], false, false)
+	# create_link(agents[0], agents[1], false, false)
 	# create_link(agents[1], agents[2])
 	# create_link(agents[2], agents[0])
 
@@ -171,6 +171,9 @@ func do_victory():
 			get_tree().set_meta("next_scene","res://Colin/level_3.tscn")
 			get_tree().change_scene_to_file("res://Colin/level_transition.tscn")
 		"res://Colin/level_3.tscn":
+			get_tree().set_meta("next_scene","res://Colin/level_4.tscn")
+			get_tree().change_scene_to_file("res://Colin/level_transition.tscn")
+		"res://Colin/level_4.tscn":
 			get_tree().set_meta("next_scene","res://Colin/victory.tscn")
 			get_tree().change_scene_to_file("res://Colin/level_transition.tscn")
 func do_defeat():
