@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dstwk8at87f3g"]
+
+[node name="IntroScene" type="Node2D" unique_id=215827416]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1066522657]
+
+[node name="Control" type="Control" parent="." unique_id=36480056]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=231283522]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 663.0
+color = Color(0.5529412, 0.40392157, 1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=2076519500]
