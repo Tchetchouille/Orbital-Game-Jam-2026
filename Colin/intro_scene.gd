@@ -19,3 +19,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Florian/FloScene.tscn") # aller à la scène
+
+func text_box_change():
+	var new_sb = StyleBoxFlat.new()
+	new_sb.bg_color = Color(0.176, 0.176, 0.176, 0.62)
+	new_sb.border_color = Color(0.176, 0.176, 0.176, 0.82)
+	new_sb.set_border_width_all(5)
+	new_sb.set_corner_radius_all(10)
+	$Control/Label.add_theme_stylebox_override("normal", new_sb)

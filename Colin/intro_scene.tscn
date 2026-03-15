@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://dstwk8at87f3g"]
 
 [ext_resource type="Script" uid="uid://b0ikrb6vcksu5" path="res://Colin/intro_scene.gd" id="1_5nbmm"]
-[ext_resource type="Texture2D" uid="uid://carwaymivooak" path="res://icon.svg" id="1_hq403"]
 [ext_resource type="Texture2D" uid="uid://dgq8fp8jnxptc" path="res://Basis/Scenes/Menus and Fixed Screens/Credits/sunflower_elon.png" id="2_7h0vs"]
+[ext_resource type="Texture2D" uid="uid://cwwn442vnsb4s" path="res://Colin/intro_bg_img/Ground_Forces_Festival_2025_-_0056.jpg" id="2_kyyjh"]
 [ext_resource type="AudioStream" uid="uid://ye7bojj3d6tj" path="res://Colin/Soviet_Anthem_Instrumental_1955.ogg" id="3_7h0vs"]
+[ext_resource type="Texture2D" uid="uid://c8fxlb7vlm537" path="res://Colin/intro_bg_img/Operation_Upshot-Knothole_-_Badger_001.jpg" id="3_gr1jd"]
 [ext_resource type="Script" uid="uid://b3epjehlc8ws6" path="res://Colin/button.gd" id="5_kyyjh"]
+[ext_resource type="Texture2D" uid="uid://dh63pepe6v704" path="res://Colin/intro_bg_img/20231125_housecat_south_meadows_PD100306.jpg" id="5_r0fvn"]
+[ext_resource type="Texture2D" uid="uid://8fwusf37wnlt" path="res://Colin/intro_bg_img/Flag_of_the_Combat_Organization_of_Anarcho-Communists.svg.png" id="6_pn6nt"]
 
 [sub_resource type="Animation" id="Animation_5nbmm"]
 length = 50.0
@@ -69,6 +72,18 @@ tracks/4/keys = {
 "update": 0,
 "values": [-29.655, 19.024]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/Sprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_kyyjh"]
 resource_name = "new_animation"
@@ -80,10 +95,10 @@ tracks/0/path = NodePath("Control/Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.033333335, 2.4),
-"transitions": PackedFloat32Array(1, 0.2332583),
+"times": PackedFloat32Array(0, 5.7, 13.166667, 25.14, 39.219997),
+"transitions": PackedFloat32Array(1, 1, 0.2332583, 1, 1),
 "update": 1,
-"values": [ExtResource("1_hq403"), ExtResource("2_7h0vs")]
+"values": [ExtResource("2_kyyjh"), ExtResource("3_gr1jd"), ExtResource("2_7h0vs"), ExtResource("5_r0fvn"), ExtResource("6_pn6nt")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -92,7 +107,7 @@ tracks/1/path = NodePath("Control/Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.4, 7, 13.153333, 19.696667, 25.13, 29.133333, 34.46, 39.213333, 43.353333),
+"times": PackedFloat32Array(0, 2.7666667, 7.3333335, 13.153333, 19.696667, 25.13, 29.133333, 34.46, 39.213333, 43.353333),
 "transitions": PackedFloat32Array(1, 2.4622886, 2.4622886, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["La 3e guerre mondiale est là.", "Toutes les nations sont au bord de l'abîme. Les différents protagonistes ont longtemps hésité à utiliser l'arme nucléaire. Jusqu'à cet instant.", "À cet instant les champignons se sont multiplié sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin, a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin.", "Sa femme, son fil, sa maison son chat.
@@ -122,7 +137,7 @@ tracks/3/path = NodePath("Control/Label:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.48, 2.4, 3, 6.113333, 7.0333333, 7.623334, 12.213333, 13.133333, 13.733333, 18.780003, 19.7, 20.300003, 24.213333, 25.133333, 25.733334, 28.2, 29.12, 29.720001, 33.533333, 34.45333, 35.053333, 38.313335, 39.233334, 39.833336, 42.41333, 43.333332, 43.93333),
+"times": PackedFloat32Array(0, 1.8466666, 2.7666667, 3.3666666, 6.4466667, 7.366667, 7.9566674, 12.213333, 13.133333, 13.733333, 18.780003, 19.7, 20.300003, 24.213333, 25.133333, 25.733334, 28.2, 29.12, 29.720001, 33.533333, 34.45333, 35.053333, 38.313335, 39.233334, 39.833336, 42.41333, 43.333332, 43.93333),
 "transitions": PackedFloat32Array(1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -138,6 +153,32 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(3.1383357, 1),
 "update": 0,
 "values": [-29.655, 0.0]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"text_box_change"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Control/Sprite2D:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5.1, 5.7, 6.2),
+"transitions": PackedFloat32Array(1, 2.0000005, 0.70710677, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0.49411765), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gr1jd"]
@@ -165,17 +206,17 @@ offset_bottom = 663.0
 color = Color(0.5529412, 0.40392157, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=2076519500]
-position = Vector2(547, 289.99994)
-scale = Vector2(0.31115592, 0.31115595)
+position = Vector2(580.64404, 388.60156)
+scale = Vector2(1.8145126, 1.8145127)
 
 [node name="Label" type="Label" parent="Control" unique_id=792765890]
 modulate = Color(1, 1, 1, 0)
 z_index = 1
 layout_mode = 0
-offset_left = 69.0
-offset_top = 476.0
-offset_right = 1086.0
-offset_bottom = 652.0
+offset_left = 64.0
+offset_top = 456.0
+offset_right = 1081.0
+offset_bottom = 632.0
 theme_override_font_sizes/font_size = 27
 text = "La 3e guerre mondiale est là."
 horizontal_alignment = 1
