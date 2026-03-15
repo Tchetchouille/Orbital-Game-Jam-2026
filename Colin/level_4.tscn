@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://ca4gjnhn4v4yn"]
+[gd_scene format=3 uid="uid://capqxymgtfmqj"]
 
-[ext_resource type="Script" uid="uid://uw54sgdsl68s" path="res://Colin/level_4.gd" id="1_03jap"]
+[ext_resource type="Script" path="res://Colin/level_4.gd" id="1_03jap"]
 [ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="2_qydsw"]
 [ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="3_6ci0t"]
 [ext_resource type="Script" uid="uid://bjftwfr7ggnph" path="res://Florian/max_link_changes.gd" id="4_15n1c"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://d1o4oq1824epc" path="res://Mei/fond_acier/fond_acier.png" id="7_5mb7s"]
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="8_oo2cv"]
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="9_how0h"]
+[ext_resource type="PackedScene" uid="uid://c57wm4n6ifkub" path="res://Florian/Tuto.tscn" id="10_6ci0t"]
 
 [node name="Level4" type="Node2D" unique_id=1607958790]
 script = ExtResource("1_03jap")
@@ -141,3 +142,9 @@ id = 9
 [node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("go_button", "agents") instance=ExtResource("9_how0h")]
 go_button = NodePath("../Control")
 agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3"), NodePath("../Agent4"), NodePath("../Agent5"), NodePath("../Agent6"), NodePath("../Agent7"), NodePath("../Agent8"), NodePath("../Agent9")]
+
+[node name="Tuto" parent="." unique_id=244726942 instance=ExtResource("10_6ci0t")]
+offset_left = 1147.0
+offset_top = 646.0
+offset_right = 1147.0
+offset_bottom = 646.0

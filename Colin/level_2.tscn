@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cvpged5sa0h0b"]
+[gd_scene format=3 uid="uid://cwtwv5vad2y2t"]
 
 [ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="1_b0qib"]
-[ext_resource type="Script" uid="uid://f4xntygmc4co" path="res://Colin/level_2.gd" id="1_xilgv"]
+[ext_resource type="Script" path="res://Colin/level_2.gd" id="1_xilgv"]
 [ext_resource type="Script" uid="uid://bjftwfr7ggnph" path="res://Florian/max_link_changes.gd" id="2_xilgv"]
 [ext_resource type="Script" uid="uid://e4ihvsw07sqg" path="res://Florian/current_link_changes.gd" id="3_j62y6"]
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="4_fs5y0"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="6_edaff"]
 [ext_resource type="Script" uid="uid://c3njspqmfo2oy" path="res://Florian/days.gd" id="7_tuatt"]
 [ext_resource type="Texture2D" uid="uid://d1o4oq1824epc" path="res://Mei/fond_acier/fond_acier.png" id="8_jbcxd"]
+[ext_resource type="PackedScene" uid="uid://c57wm4n6ifkub" path="res://Florian/Tuto.tscn" id="10_j62y6"]
 
 [node name="Level2" type="Node2D" unique_id=835293057]
 script = ExtResource("1_xilgv")
@@ -136,3 +137,9 @@ offset_top = 6.0
 offset_right = 1141.0
 offset_bottom = 35.0
 color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
+
+[node name="Tuto" parent="." unique_id=244726942 instance=ExtResource("10_j62y6")]
+offset_left = 1143.0
+offset_top = 635.0
+offset_right = 1143.0
+offset_bottom = 635.0
