@@ -54,6 +54,7 @@ offset_top = 8.0
 offset_right = -6.0
 offset_bottom = -9.0
 theme = ExtResource("1_d4qi2")
+theme_override_constants/line_spacing = 5
 text = "En haut de l’écran, tu vois le nombre d’actions disponibles.
 Tu peux créer un lien entre deux membres de l’équipage ou couper le lien qui les unit.
 Clique et glisse pour couper ou créer un lien : cela te coûtera une action.
@@ -65,5 +66,6 @@ Si iel est à –1, la méritocratie et les bitcoins seront ses seuls sujets de 
 
 Quand tu n’as plus d’actions disponibles, appuie sur « go ».
 Pour passer au niveau suivant, il faut que touxtes les membres de l’équipage soient rouges."
+autowrap_mode = 2
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
