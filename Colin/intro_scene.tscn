@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://dstwk8at87f3g"]
+[gd_scene format=3 uid="uid://dfo3b621nksu0"]
 
 [ext_resource type="Script" uid="uid://b0ikrb6vcksu5" path="res://Colin/intro_scene.gd" id="1_5nbmm"]
 [ext_resource type="Texture2D" uid="uid://dgq8fp8jnxptc" path="res://Basis/Scenes/Menus and Fixed Screens/Credits/sunflower_elon.png" id="2_7h0vs"]
 [ext_resource type="Texture2D" uid="uid://cwwn442vnsb4s" path="res://Colin/intro_bg_img/Ground_Forces_Festival_2025_-_0056.jpg" id="2_kyyjh"]
 [ext_resource type="AudioStream" uid="uid://ye7bojj3d6tj" path="res://Colin/Soviet_Anthem_Instrumental_1955.ogg" id="3_7h0vs"]
 [ext_resource type="Texture2D" uid="uid://c8fxlb7vlm537" path="res://Colin/intro_bg_img/Operation_Upshot-Knothole_-_Badger_001.jpg" id="3_gr1jd"]
-[ext_resource type="Script" uid="uid://b3epjehlc8ws6" path="res://Colin/button.gd" id="5_kyyjh"]
+[ext_resource type="Script" path="res://Colin/button.gd" id="5_kyyjh"]
 [ext_resource type="Texture2D" uid="uid://dh63pepe6v704" path="res://Colin/intro_bg_img/20231125_housecat_south_meadows_PD100306.jpg" id="5_r0fvn"]
 [ext_resource type="Texture2D" uid="uid://8fwusf37wnlt" path="res://Colin/intro_bg_img/Flag_of_the_Combat_Organization_of_Anarcho-Communists.svg.png" id="6_pn6nt"]
-[ext_resource type="Theme" uid="uid://2kjtjxq4evix" path="res://Basis/Themes/intro_theme.tres" id="9_1f7wj"]
+[ext_resource type="Theme" path="res://Basis/Themes/intro_theme.tres" id="9_1f7wj"]
 [ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="9_7h5ke"]
 
 [sub_resource type="Animation" id="Animation_5nbmm"]
@@ -36,7 +36,7 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": ["La 3e guerre mondiale est là.", "Toutes les nations sont au bord de l'abîme. Les différents protagonistes ont longtemps hésité à utiliser l'arme nucléaire.
-Jusqu'à cet instant.", "À cet instant les champignons se sont multiplié sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin, a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin."]
+Jusqu'à cet instant.", "À cet instant les champignons se sont multipliés sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin, a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin."]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -109,15 +109,15 @@ tracks/1/path = NodePath("Control/Label:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.7666667, 7.3333335, 13.153333, 19.696667, 25.13, 29.133333, 34.46, 39.213333, 45.12),
+"times": PackedFloat32Array(0, 2.7666667, 7.3333335, 13.153333, 19.696667, 25.13, 29.133333, 34.46, 39.213333, 45.1),
 "transitions": PackedFloat32Array(1, 2.4622886, 2.4622886, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": ["La 3e guerre mondiale est là.", "Toutes les nations sont au bord de l'abîme. Les différents protagonistes ont longtemps hésité à utiliser l'arme nucléaire. Jusqu'à cet instant.", "À cet instant les champignons se sont multiplié sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin, a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin.", "Sa femme, son fil, sa maison son chat.
+"values": ["La 3e guerre mondiale est là.", "Toutes les nations sont au bord de l'abîme. Les différents protagonistes ont longtemps hésité à utiliser l'arme nucléaire. Jusqu'à cet instant.", "À cet instant les champignons se sont multiplié sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin.", "Sa femme, son fils, sa maison son chat.
 Tout.
 Tout ce qu'il aime. Tout a été rayé de la surface de la terre. C'était trop.", "Il a appuyé sur la gâchette de son arme, fermement, pressée derrière son oreille.", "L'équipage a perdu sa tête...
 La nourriture, l'eau et peut-être l'oxygène ne vont pas suffir. ", "Qui va commander ?
 Une utopie anarcho-communiste va-t-elle naître sous les eaux ?
-Une sturcture hiérarchique et autoritaire va-telle se dresser du fond des mers ?", "Influencez l'opinion de l'équipage, créez ou détruisez des liens. Vous allez favoriser la survie de touxtes ou de quelques unxs. Faîtes preuve de ruse
+Une structure hiérarchique et autoritaire va-telle se dresser du fond des mers ?", "Influencez l'opinion de l'équipage, créez ou détruisez des liens. Vous allez favoriser la survie de touxtes ou de quelques unxs. Faîtes preuve de ruse
 et gardez votre cap : faîtes gagner les valeurs communautaires !! Hasta siempre !"]
 }
 tracks/2/type = "value"
