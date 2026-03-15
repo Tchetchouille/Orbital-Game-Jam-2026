@@ -80,6 +80,8 @@ func start_line(agent):
 	if not drawing:
 		line = Line2D.new()
 		line.z_index = -1000
+		line.texture = load("res://Basis/Scenes/Menus and Fixed Screens/Credits/sunflower_elon.png")
+		line.texture_mode =Line2D.LINE_TEXTURE_STRETCH
 		$"..".add_child(line)
 		if hovered_agent != null:
 			start_agent = agent

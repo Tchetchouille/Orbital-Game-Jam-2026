@@ -10,6 +10,12 @@ var created_by_player: bool = false
 
 func _ready() -> void:
 	z_index = -1000
+	if created_by_player:
+		texture = load("res://Basis/Scenes/Menus and Fixed Screens/Credits/sunflower_elon.png") # A modifier
+	else:
+		texture = load("res://Mei/hublot/hublot.png") # A modifier
+	texture_mode =Line2D.LINE_TEXTURE_STRETCH
+		
 
 func set_created_by_player(value: bool) -> void:
 	created_by_player = value
