@@ -1,61 +1,66 @@
 extends Node
 
-var features
+const BASE_PATH := "res://Mei/personnage/"
 
-
-func _init():
-	var directories = DirAccess.get_directories_at("./Mei/personnage")
-	features = {}
-	for dir in directories:
-		var files = DirAccess.get_files_at("./Mei/personnage/"+dir)
-		var png_files = Array()
-		for file in files:
-			if file.ends_with(".png"):
-				png_files.append(file)
-		features[dir] = png_files
+const FEATURES := {
+	"fond_head": ["fond_head_1.png", "fond_head_2.png", "fond_head_3.png"],
+	"fond_eye": ["fond_eye_1.png", "fond_eye_2.png", "fond_eye_3.png", "fond_eye_4.png"],
+	"eye": ["eye_1.png", "eye_2.png", "eye_3.png", "eye_4.png"],
+	"eyebrown": ["eyebrown_1.png", "eyebrown_2.png"],
+	"hair": [
+		"hair_1_1.png", "hair_1_2.png", "hair_1_3.png",
+		"hair_2_1.png", "hair_2_2.png", "hair_2_3.png",
+		"hair_3_1.png", "hair_3_2.png", "hair_3_3.png",
+		"hair_4_1.png", "hair_4_2.png", "hair_4_3.png",
+		"hair_5_1.png", "hair_5_2.png", "hair_5_3.png",
+		"hair_6_1.png", "hair_6_2.png", "hair_6_3.png",
+	],
+	"mouth": ["mouth_1.png", "mouth_2.png", "mouth_3.png", "mouth_4.png"],
+	"nose": ["nose_1.png", "nose_2.png", "nose_3.png", "nose_4.png"],
+	"accesories": [
+		"accesories_1.png", "accesories_2.png", "accesories_3.png",
+		"accesories_4.png", "accesories_5.png", "accesories_6.png",
+	],
+}
 
 func _ready():
-	var head_nbr = null
-	var eye_nbr = null
-	for feature in features:
-		print(feature)
+	var head_nbr = randi_range(1, 3)
+	var eye_nbr = randi_range(1, 4)
+	for feature in FEATURES:
 		var node = Sprite2D.new()
-		if feature =="fond_head":
+		if feature == "fond_head":
 			node.z_index = 1
-			head_nbr=randi_range(1, 3)
-			var random_obj = features[feature].pick_random()
-			random_obj = random_obj.substr(0,len(random_obj) - 5)
-			random_obj += str(head_nbr)+".png"
-			print(random_obj)
+			var random_obj = FEATURES[feature].pick_random()
+			random_obj = random_obj.substr(0, len(random_obj) - 5)
+			random_obj += str(head_nbr) + ".png"
 			node.modulate = skin_tone_color()
-			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
+			node.texture = load(BASE_PATH + feature + "/" + random_obj)
 		elif feature == "hair":
-			node.z_index=4
-			var random_obj = features[feature].pick_random()
-			random_obj = random_obj.substr(0,len(random_obj) - 5)
-			random_obj += str(head_nbr)+".png"
-			node.modulate = Color(randf(), randf(), randf(),1)
-			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
-		elif feature == "eye": 
-			node.z_index =3
-			eye_nbr=randi_range(1, 4)
-			var random_obj = features[feature].pick_random()
-			random_obj = random_obj.substr(0,len(random_obj) - 5)
-			random_obj += str(eye_nbr)+".png"
-			node.modulate = Color(randf(), randf(), randf(),1)
-			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
-		elif feature =="fond_eye":
-			node.z_index =2
-			var random_obj = features[feature].pick_random()
-			random_obj = random_obj.substr(0,len(random_obj) - 5)
-			random_obj += str(eye_nbr)+".png"
-			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
+			node.z_index = 4
+			var random_obj = FEATURES[feature].pick_random()
+			random_obj = random_obj.substr(0, len(random_obj) - 5)
+			random_obj += str(head_nbr) + ".png"
+			node.modulate = Color(randf(), randf(), randf(), 1)
+			node.texture = load(BASE_PATH + feature + "/" + random_obj)
+		elif feature == "eye":
+			node.z_index = 3
+			var random_obj = FEATURES[feature].pick_random()
+			random_obj = random_obj.substr(0, len(random_obj) - 5)
+			random_obj += str(eye_nbr) + ".png"
+			node.modulate = Color(randf(), randf(), randf(), 1)
+			node.texture = load(BASE_PATH + feature + "/" + random_obj)
+		elif feature == "fond_eye":
+			node.z_index = 2
+			var random_obj = FEATURES[feature].pick_random()
+			random_obj = random_obj.substr(0, len(random_obj) - 5)
+			random_obj += str(eye_nbr) + ".png"
+			node.texture = load(BASE_PATH + feature + "/" + random_obj)
 		else:
-			node.z_index =2
-			var random_obj = features[feature].pick_random()
-			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
-		node.position = Vector2($"..".position.x, $"..".position.y+5)
-		node.scale=Vector2(0.1,0.1)
+			node.z_index = 2
+			var random_obj = FEATURES[feature].pick_random()
+			node.texture = load(BASE_PATH + feature + "/" + random_obj)
+		node.position = Vector2($"..".position.x, $"..".position.y + 5)
+		node.scale = Vector2(0.1, 0.1)
 		add_child(node)
 func skin_tone_color():
 	var t=randf()
