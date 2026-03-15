@@ -1,8 +1,11 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b020kb5kf0h0y"]
+[gd_resource type="Theme" format=3 uid="uid://b020kb5kf0h0y"]
+
+[ext_resource type="FontFile" uid="uid://dtunaety4j840" path="res://Basis/Fonts/La pétroleuse-Regular.ttf" id="1_ta8sf"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aigif"]
 
 [resource]
+default_font = ExtResource("1_ta8sf")
 CheckBox/styles/disabled = null
 CheckBox/styles/focus = SubResource("StyleBoxEmpty_aigif")
 CheckBox/styles/hover = null

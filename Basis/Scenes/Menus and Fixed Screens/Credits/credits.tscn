@@ -120,6 +120,7 @@ ratio = 0.03
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
+text = "Font by : Loki Gwynbleidd"
 scroll_active = false
 script = ExtResource("2_l2pkk")
 ratio = 0.01

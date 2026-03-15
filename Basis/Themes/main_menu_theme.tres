@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://ks7w64dlvxp7"]
 
+[ext_resource type="FontFile" uid="uid://dtunaety4j840" path="res://Basis/Fonts/La pétroleuse-Regular.ttf" id="1_7hey6"]
+
 [resource]
+default_font = ExtResource("1_7hey6")
 Button/font_sizes/font_size = 75
 RichTextLabel/font_sizes/normal_font_size = 150

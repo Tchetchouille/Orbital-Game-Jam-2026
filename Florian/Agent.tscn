@@ -21,3 +21,11 @@ texture = ExtResource("2_jcr1x")
 
 [node name="perso_generator" type="Node" parent="." unique_id=979580749]
 script = ExtResource("2_4hdon")
+
+[node name="Label" type="Label" parent="." unique_id=1909758232]
+offset_left = -20.0
+offset_top = 50.0
+offset_right = 20.0
+offset_bottom = 73.0
+text = "0"
+horizontal_alignment = 1

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://2kjtjxq4evix"]
+
+[ext_resource type="FontFile" uid="uid://dtunaety4j840" path="res://Basis/Fonts/La pétroleuse-Regular.ttf" id="1_w4yqc"]
+
+[resource]
+default_font = ExtResource("1_w4yqc")
+default_font_size = 26
