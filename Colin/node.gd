@@ -54,7 +54,8 @@ func _ready():
 			node.z_index =2
 			var random_obj = features[feature].pick_random()
 			node.texture = load("./Mei/personnage/"+feature+"/"+random_obj)
-		print(node.texture)
+		node.position = Vector2($"..".position.x, $"..".position.y+5)
+		node.scale=Vector2(0.1,0.1)
 		add_child(node)
 func skin_tone_color():
 	var t=randf()

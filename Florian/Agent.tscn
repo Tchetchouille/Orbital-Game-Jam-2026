@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b5slj5wfmqsbo"]
 
 [ext_resource type="Script" uid="uid://bokrped5eme4x" path="res://Florian/agent.gd" id="1_6ei7d"]
+[ext_resource type="Script" uid="uid://djix6tixeah3f" path="res://Colin/node.gd" id="2_4hdon"]
 [ext_resource type="Texture2D" uid="uid://qx0xu2l8oyw8" path="res://Mei/hublot/hublot.png" id="2_jcr1x"]
-[ext_resource type="PackedScene" path="res://Jeremias/Scenes/agent_area.tscn" id="3_jcr1x"]
+[ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent_area.tscn" id="3_jcr1x"]
 
 [node name="Agent" type="Node2D" unique_id=1399513064 node_paths=PackedStringArray("portrait", "background")]
 script = ExtResource("1_6ei7d")
@@ -17,3 +18,6 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_jcr1x")
 
 [node name="AgentArea" parent="." unique_id=1002194706 instance=ExtResource("3_jcr1x")]
+
+[node name="perso_generator" type="Node" parent="." unique_id=979580749]
+script = ExtResource("2_4hdon")
