@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://bgdg1p5gfumw8"]
+
+[ext_resource type="Script" uid="uid://btvonjp2mnuns" path="res://Colin/level_3.gd" id="1_rmrn7"]
+[ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="2_utsdf"]
+[ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="3_bxh3r"]
+[ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="4_7t0xi"]
+[ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="5_7o2q6"]
+[ext_resource type="Script" uid="uid://bjftwfr7ggnph" path="res://Florian/max_link_changes.gd" id="6_j3884"]
+[ext_resource type="Script" uid="uid://e4ihvsw07sqg" path="res://Florian/current_link_changes.gd" id="7_broq2"]
+[ext_resource type="Script" uid="uid://c3njspqmfo2oy" path="res://Florian/days.gd" id="8_642yj"]
+[ext_resource type="Texture2D" uid="uid://d1o4oq1824epc" path="res://Mei/fond_acier/fond_acier.png" id="9_xq1lm"]
+
+[node name="Level3" type="Node2D" unique_id=1539047132]
+script = ExtResource("1_rmrn7")
+
+[node name="AgentManager" parent="." unique_id=1217197740 instance=ExtResource("3_bxh3r")]
+
+[node name="Agent1" parent="." unique_id=1399513064 instance=ExtResource("4_7t0xi")]
+position = Vector2(194, 184)
+alignment = 0.5
+id = 1
+
+[node name="Agent2" parent="." unique_id=1687529793 instance=ExtResource("4_7t0xi")]
+position = Vector2(197, 510)
+id = 2
+
+[node name="Agent3" parent="." unique_id=32722420 instance=ExtResource("4_7t0xi")]
+position = Vector2(592, 337)
+alignment = -1.0
+id = 3
+
+[node name="Agent4" parent="." unique_id=1826149397 instance=ExtResource("4_7t0xi")]
+position = Vector2(1016, 181)
+alignment = -0.30000000000000004
+id = 4
+
+[node name="Agent5" parent="." unique_id=689273678 instance=ExtResource("4_7t0xi")]
+position = Vector2(1019, 498)
+alignment = -1.0
+id = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=781644649]
+z_index = -1
+offset_left = 504.0
+offset_top = 6.0
+offset_right = 668.0
+offset_bottom = 35.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
+
+[node name="Info" type="Label" parent="." unique_id=142667623]
+offset_left = 515.0
+offset_top = 9.0
+offset_right = 605.0
+offset_bottom = 33.0
+theme = ExtResource("5_7o2q6")
+theme_override_font_sizes/font_size = 28
+text = "Actions :"
+
+[node name="MaxLinkChanges" type="Label" parent="." unique_id=833536809]
+offset_left = 639.0
+offset_top = 9.0
+offset_right = 679.0
+offset_bottom = 33.0
+theme = ExtResource("5_7o2q6")
+theme_override_font_sizes/font_size = 28
+text = "99"
+script = ExtResource("6_j3884")
+
+[node name="Slash" type="Label" parent="." unique_id=1653690734]
+offset_left = 629.0
+offset_top = 9.0
+offset_right = 669.0
+offset_bottom = 33.0
+theme = ExtResource("5_7o2q6")
+theme_override_font_sizes/font_size = 28
+text = "/"
+
+[node name="CurrentLinkChanges" type="Label" parent="." unique_id=2089275949]
+offset_left = 583.0
+offset_top = 9.0
+offset_right = 623.0
+offset_bottom = 33.0
+theme = ExtResource("5_7o2q6")
+theme_override_font_sizes/font_size = 28
+text = "0"
+horizontal_alignment = 2
+script = ExtResource("7_broq2")
+
+[node name="Control" type="Button" parent="." unique_id=201402528]
+offset_right = 105.0
+offset_bottom = 40.0
+theme = ExtResource("5_7o2q6")
+theme_override_font_sizes/font_size = 24
+text = "Go"
+
+[node name="Days" type="Label" parent="." unique_id=1976607492]
+offset_left = 1069.0
+offset_top = 11.0
+offset_right = 1120.0
+offset_bottom = 35.0
+theme = ExtResource("5_7o2q6")
+theme_override_font_sizes/font_size = 28
+text = "Day 0"
+script = ExtResource("8_642yj")
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=376667587]
+z_index = -1
+offset_left = 1062.0
+offset_top = 6.0
+offset_right = 1126.0
+offset_bottom = 35.0
+color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=752984048]
+z_index = -4096
+texture_repeat = 2
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_xq1lm")
+region_enabled = true
+region_rect = Rect2(0, 0, 20000000, 14140000)
+
+[node name="Manager" parent="." unique_id=263219502 node_paths=PackedStringArray("go_button", "agents") instance=ExtResource("2_utsdf")]
+go_button = NodePath("../Control")
+agents = [NodePath("../Agent1"), NodePath("../Agent2"), NodePath("../Agent3"), NodePath("../Agent4"), NodePath("../Agent5")]

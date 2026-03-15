@@ -1,5 +1,7 @@
 extends RichTextLabel
 
+func _ready() -> void:
+	Input.set_custom_mouse_cursor(load("res://Mei/curseur/crayon.png"))
 func _process(_delta: float) -> void:
 	resize_title()
 

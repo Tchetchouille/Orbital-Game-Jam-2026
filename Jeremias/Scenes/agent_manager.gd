@@ -88,12 +88,14 @@ func start_line(agent):
 			start_agent = agent
 			line.add_point(agent.global_position)
 		else:
+			Input.set_custom_mouse_cursor(load("res://Mei/curseur/ciseau.png"))
 			line.add_point(get_global_mouse_position())
 		line.add_point(get_global_mouse_position())
 		drawing = true
 
 func end_line():
 	if drawing:
+		Input.set_custom_mouse_cursor(load("res://Mei/curseur/crayon.png"))
 		if line != null:
 			$"..".remove_child(line)
 			if hovered_agent != null and start_agent != null:
