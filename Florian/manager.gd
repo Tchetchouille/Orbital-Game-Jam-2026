@@ -163,4 +163,5 @@ func do_victory():
 	pass
 
 func do_defeat():
-	pass #
+	get_tree().set_meta("last_scene", get_tree().current_scene.scene_file_path)
+	get_tree().change_scene_to_file("res://Colin/defeat.tscn")

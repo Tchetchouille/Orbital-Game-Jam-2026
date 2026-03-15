@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://dmgc6f0uyly1t"]
+[gd_scene format=3 uid="uid://crmqsn5wad7ay"]
 
 [ext_resource type="Texture2D" uid="uid://dpkuhax4mxpsa" path="res://Mei/screen/screen_game_over.png" id="1_6da80"]
 [ext_resource type="Script" uid="uid://by5ubo0n1h3om" path="res://Colin/defeat.gd" id="1_l2td4"]
