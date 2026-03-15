@@ -4,3 +4,9 @@
 
 [node name="AgentManager" type="Node2D" unique_id=1217197740]
 script = ExtResource("1_cusjq")
+
+[node name="Timer" type="Timer" parent="." unique_id=1950786040]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
