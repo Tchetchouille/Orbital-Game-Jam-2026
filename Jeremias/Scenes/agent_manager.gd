@@ -84,6 +84,7 @@ func start_line(agent):
 		line.texture = load("res://Mei/lien/corde.png")
 		line.texture_mode =Line2D.LINE_TEXTURE_STRETCH
 		$"..".add_child(line)
+		SFX.play("res://Colin/sounds/rubber.mp3")
 		if hovered_agent != null:
 			start_agent = agent
 			line.add_point(agent.global_position)
@@ -110,7 +111,10 @@ func end_line():
 					var link_end = link.agent2.global_position
 					if _segments_intersect(draw_start, draw_end, link_start, link_end):
 						delete_link.emit(link)
+						SFX.play("res://Colin/sounds/coupe.mp3")
 						print("LINK DELETED" + str(link))
+					else:
+						SFX.play("res://Colin/sounds/click_vide.wav")
 		drawing = false
 		start_agent = null
 		print("END")

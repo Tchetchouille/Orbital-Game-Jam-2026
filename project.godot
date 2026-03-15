@@ -26,6 +26,7 @@ boot_splash/minimum_display_time=300
 [autoload]
 
 GameMusic="*res://Basis/Scenes/Autoloads/game_music.tscn"
+SFX="*res://Basis/Scenes/Autoloads/sfx.gd"
 
 [display]
 

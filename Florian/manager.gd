@@ -148,9 +148,10 @@ func _on_go_button_pressed() -> void:
 	link_changes_changed.emit(link_changes_this_turn)
 	link_changes_max_changed.emit(max_link_changes_per_turn)
 	var fin_tour
+	SFX.play("res://Colin/sounds/days_tick.wav")
 	for i in range(7):
 		fin_tour = do_simulation_turn()
-		await get_tree().create_timer(0.25).timeout
+		await get_tree().create_timer(0.4).timeout
 		days_passed += 1
 		days_passed_changed.emit(days_passed)
 	if fin_tour == "victory":
