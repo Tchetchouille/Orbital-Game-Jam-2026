@@ -121,7 +121,6 @@ offset_bottom = 35.0
 color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277658167]
-visible = false
 z_index = -4096
 texture_repeat = 2
 scale = Vector2(0.25, 0.25)
