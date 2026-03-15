@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bokrped5eme4x" path="res://Florian/agent.gd" id="1_6ei7d"]
 [ext_resource type="Script" uid="uid://djix6tixeah3f" path="res://Colin/node.gd" id="2_4hdon"]
 [ext_resource type="Texture2D" uid="uid://qx0xu2l8oyw8" path="res://Mei/hublot/hublot.png" id="2_jcr1x"]
-[ext_resource type="PackedScene" uid="uid://oo0gydwe3xqd" path="res://Jeremias/Scenes/agent_area.tscn" id="3_jcr1x"]
+[ext_resource type="PackedScene" path="res://Jeremias/Scenes/agent_area.tscn" id="3_jcr1x"]
 [ext_resource type="FontFile" uid="uid://dtunaety4j840" path="res://Basis/Fonts/La pétroleuse-Regular.ttf" id="5_4yth7"]
 
 [node name="Agent" type="Node2D" unique_id=1399513064 node_paths=PackedStringArray("portrait", "background")]

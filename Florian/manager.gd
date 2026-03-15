@@ -19,7 +19,7 @@ func _ready() -> void:
 	$"../AgentManager".create_link.connect(_on_create_link)
 	$"../AgentManager".delete_link.connect(_on_remove_link)
 	go_button.pressed.connect(_on_go_button_pressed)
-	create_link(agents[0], agents[1])
+	create_link(agents[0], agents[1], false, false)
 	# create_link(agents[1], agents[2])
 	# create_link(agents[2], agents[0])
 
@@ -30,15 +30,16 @@ func _ready() -> void:
 	link_changes_changed.emit(link_changes_this_turn)
 	link_changes_max_changed.emit(max_link_changes_per_turn)
 
-func create_link(agent1: Agent, agent2: Agent, created_by_player: bool = false) -> void:
+func create_link(agent1: Agent, agent2: Agent, created_by_player: bool = false, removable: bool = true) -> void:
 	var new_link: Link = Link.new()
 	new_link.set_agents(agent1, agent2)
 	links[str(agent1.id) + "_" + str(agent2.id)] = new_link
 	new_link.set_created_by_player(created_by_player)
+	new_link.set_removable(removable)
 	add_child(new_link)
 
 func remove_link(link: Link) -> void:
-	if link.created_by_player:
+	if link.removable:
 		links.erase(str(link.agent1.id) + "_" + str(link.agent2.id))
 		remove_child(link)
 	else:

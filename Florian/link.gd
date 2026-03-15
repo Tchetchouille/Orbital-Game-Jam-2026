@@ -6,18 +6,28 @@ class_name Link
 @export var agent2: Agent
 
 var created_by_player: bool = false
+var removable: bool = true
 
 
 func _ready() -> void:
 	z_index = -1000
-	width=20
-	if created_by_player:
-		texture = load("res://Mei/lien/corde.png") # A modifier
+	if removable:
+		texture = load("res://Mei/lien/corde.png")
+		width=20
 	else:
-		texture = load("res://Mei/lien/chaine.png") # A modifier
+		texture = load("res://Mei/lien/chaine.png")
 		width = 28
 	texture_mode = Line2D.LINE_TEXTURE_STRETCH
-		
+
+func set_removable(value: bool) -> void:
+	removable = value
+
+	if removable:
+		texture = load("res://Mei/lien/corde.png")
+		width=20
+	else:
+		texture = load("res://Mei/lien/chaine.png")
+		width = 28
 
 func set_created_by_player(value: bool) -> void:
 	created_by_player = value

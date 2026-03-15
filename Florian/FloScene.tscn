@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="1_gjdfx"]
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="1_s6c6e"]
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="2_y8mri"]
-[ext_resource type="PackedScene" uid="uid://c1x52lgc3riqg" path="res://Jeremias/Scenes/agent_manager.tscn" id="3_y8mri"]
+[ext_resource type="PackedScene" path="res://Jeremias/Scenes/agent_manager.tscn" id="3_y8mri"]
 [ext_resource type="Script" uid="uid://bjftwfr7ggnph" path="res://Florian/max_link_changes.gd" id="4_dbht2"]
 [ext_resource type="Script" uid="uid://e4ihvsw07sqg" path="res://Florian/current_link_changes.gd" id="5_i5w0d"]
 [ext_resource type="Script" uid="uid://c3njspqmfo2oy" path="res://Florian/days.gd" id="6_glbe3"]
