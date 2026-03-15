@@ -79,8 +79,9 @@ func agent_exited():
 func start_line(agent):
 	if not drawing:
 		line = Line2D.new()
+		line.width=20
 		line.z_index = -1000
-		line.texture = load("res://Basis/Scenes/Menus and Fixed Screens/Credits/sunflower_elon.png")
+		line.texture = load("res://Mei/lien/corde.png")
 		line.texture_mode =Line2D.LINE_TEXTURE_STRETCH
 		$"..".add_child(line)
 		if hovered_agent != null:

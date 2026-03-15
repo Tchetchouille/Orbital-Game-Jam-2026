@@ -1,8 +1,156 @@
 [gd_scene format=3 uid="uid://dstwk8at87f3g"]
 
+[ext_resource type="Script" uid="uid://b0ikrb6vcksu5" path="res://Colin/intro_scene.gd" id="1_5nbmm"]
+[ext_resource type="Texture2D" uid="uid://carwaymivooak" path="res://icon.svg" id="1_hq403"]
+[ext_resource type="Texture2D" uid="uid://dgq8fp8jnxptc" path="res://Basis/Scenes/Menus and Fixed Screens/Credits/sunflower_elon.png" id="2_7h0vs"]
+[ext_resource type="AudioStream" uid="uid://ye7bojj3d6tj" path="res://Colin/Soviet_Anthem_Instrumental_1955.ogg" id="3_7h0vs"]
+[ext_resource type="Script" uid="uid://b3epjehlc8ws6" path="res://Colin/button.gd" id="5_kyyjh"]
+
+[sub_resource type="Animation" id="Animation_5nbmm"]
+length = 50.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.7333333, 7.4333334, 13.166667, 19.02),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["La 3e guerre mondiale est là.", "Toutes les nations sont au bord de l'abîme. Les différents protagonistes ont longtemps hésité à utiliser l'arme nucléaire.
+Jusqu'à cet instant.", "À cet instant les champignons se sont multiplié sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin, a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin."]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/fondu_au_noir:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.6, 2.0333333, 2.7333333, 3.2066667, 6.733333, 7.4333334, 7.9066668, 12.4766655, 13.176666, 13.65, 18.333334, 19.033335, 19.506668),
+"transitions": PackedFloat32Array(1.8660663, 1, 2.219138, 1, 0.7578584, 2.219138, 1, 0.7578584, 2.219138, 1, 0.7578584, 2.219138, 1, 0.7578584),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/AudioStreamPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.98),
+"transitions": PackedFloat32Array(4.2870927, 1),
+"update": 0,
+"values": [-29.655, 19.024]
+}
+
+[sub_resource type="Animation" id="Animation_kyyjh"]
+resource_name = "new_animation"
+length = 49.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 2.4),
+"transitions": PackedFloat32Array(1, 0.2332583),
+"update": 1,
+"values": [ExtResource("1_hq403"), ExtResource("2_7h0vs")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.4, 7, 13.153333, 19.696667, 25.13, 29.133333, 34.46, 39.213333, 43.353333),
+"transitions": PackedFloat32Array(1, 2.4622886, 2.4622886, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["La 3e guerre mondiale est là.", "Toutes les nations sont au bord de l'abîme. Les différents protagonistes ont longtemps hésité à utiliser l'arme nucléaire. Jusqu'à cet instant.", "À cet instant les champignons se sont multiplié sur la quasi totalité de la surface du globe comme un cancer qui s'apprête à transformer son hôte en carcasse sans vie.", "Une poignée de militaires en mission au large des côtes de l'islande sont parmi les derniers humains qui ne sont pas tapis dans des bunkers comme ces rats de miliardaires parasitiques, ou asssez chanceux pour avoir échapper à la pluie des bombes.", "Le capitaine de ce sous-marin, a été le premier de ce bateau à entendre que son pays natal a été réduit à peau de chagrin.", "Sa femme, son fil, sa maison son chat.
+Tout.
+Tout ce qu'il aime. Tout a été rayé de la surface de la terre. C'était trop.", "Il a appuyé sur la gâchette de son arme, fermement, pressée derrière son oreille.", "L'équipage a perdu sa tête...
+La nourriture, l'eau et peut-être l'oxygène ne vont pas suffir. ", "Qui va commander ?
+Une utopie anarcho-communiste va-t-elle naître sous les eaux ?
+Une sturcture hiérarchique et autoritaire va-telle se dresser du fond des mers ?", "Influencez l'opinion de l'équipage, créez ou détruisez des liens. Vous allez favoriser la survie de touxtes ou de quelques unxs. Faîtes preuve de ruse
+et gardez votre cap. "]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/fondu_au_noir:color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 47.243336, 48.7, 49.3),
+"transitions": PackedFloat32Array(1, 1.4640856, 0.7845841, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.48, 2.4, 3, 6.113333, 7.0333333, 7.623334, 12.213333, 13.133333, 13.733333, 18.780003, 19.7, 20.300003, 24.213333, 25.133333, 25.733334, 28.2, 29.12, 29.720001, 33.533333, 34.45333, 35.053333, 38.313335, 39.233334, 39.833336, 42.41333, 43.333332, 43.93333),
+"transitions": PackedFloat32Array(1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1, 1.6245052, 0.6597538, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/AudioStreamPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2.99),
+"transitions": PackedFloat32Array(3.1383357, 1),
+"update": 0,
+"values": [-29.655, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gr1jd"]
+_data = {
+&"RESET": SubResource("Animation_5nbmm"),
+&"new_animation": SubResource("Animation_kyyjh")
+}
+
 [node name="IntroScene" type="Node2D" unique_id=215827416]
+script = ExtResource("1_5nbmm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1066522657]
+libraries/ = SubResource("AnimationLibrary_gr1jd")
 
 [node name="Control" type="Control" parent="." unique_id=36480056]
 layout_mode = 3
@@ -17,3 +165,39 @@ offset_bottom = 663.0
 color = Color(0.5529412, 0.40392157, 1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=2076519500]
+position = Vector2(547, 289.99994)
+scale = Vector2(0.31115592, 0.31115595)
+
+[node name="Label" type="Label" parent="Control" unique_id=792765890]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 73.0
+offset_top = 471.0
+offset_right = 1090.0
+offset_bottom = 647.0
+theme_override_font_sizes/font_size = 27
+text = "La 3e guerre mondiale est là."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="fondu_au_noir" type="ColorRect" parent="Control" unique_id=1575696337]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 663.0
+color = Color(0, 0, 0, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control" unique_id=1791325972]
+stream = ExtResource("3_7h0vs")
+volume_db = -29.655
+autoplay = true
+
+[node name="Button" type="Button" parent="Control" unique_id=384692124]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 58.0
+text = "Skipper l'intro"
+script = ExtResource("5_kyyjh")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
