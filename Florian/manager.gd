@@ -163,4 +163,4 @@ func do_victory():
 	pass
 
 func do_defeat():
-	get_tree().reload_current_scene()
+	pass #

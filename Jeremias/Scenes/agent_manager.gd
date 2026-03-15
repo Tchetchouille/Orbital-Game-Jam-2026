@@ -89,6 +89,7 @@ func start_line(agent):
 			line.add_point(agent.global_position)
 		else:
 			Input.set_custom_mouse_cursor(load("res://Mei/curseur/ciseau.png"))
+			line.texture = load("res://Mei/lien/coupe.png")
 			line.add_point(get_global_mouse_position())
 		line.add_point(get_global_mouse_position())
 		drawing = true
