@@ -29,7 +29,7 @@ script = ExtResource("2_rum45")
 
 [node name="Panel" type="Panel" parent="." unique_id=1361527593]
 visible = false
-self_modulate = Color(1, 1, 1, 0.3372549)
+self_modulate = Color(1, 1, 1, 0.5411765)
 z_index = 4096
 layout_mode = 1
 anchors_preset = 3
