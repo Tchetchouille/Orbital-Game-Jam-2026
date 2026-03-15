@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://crnpu2jv4scna"]
 
+[ext_resource type="PackedScene" uid="uid://c57wm4n6ifkub" path="res://Florian/Tuto.tscn" id="1_coya5"]
 [ext_resource type="Theme" uid="uid://b020kb5kf0h0y" path="res://Basis/Themes/settings_theme.tres" id="1_gjdfx"]
 [ext_resource type="PackedScene" uid="uid://bflw25c4t7xum" path="res://Florian/Manager.tscn" id="1_s6c6e"]
 [ext_resource type="PackedScene" uid="uid://b5slj5wfmqsbo" path="res://Florian/Agent.tscn" id="2_y8mri"]
@@ -10,6 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://d1o4oq1824epc" path="res://Mei/fond_acier/fond_acier.png" id="7_koeba"]
 
 [node name="FloScene" type="Node2D" unique_id=1412494028]
+
+[node name="Tuto" parent="." unique_id=244726942 instance=ExtResource("1_coya5")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 1152.0
+offset_top = 647.0
+offset_right = 1152.0
+offset_bottom = 647.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1971026611]
 z_index = -1
@@ -104,11 +116,12 @@ script = ExtResource("6_glbe3")
 z_index = -1
 offset_left = 1062.0
 offset_top = 6.0
-offset_right = 1126.0
+offset_right = 1141.0
 offset_bottom = 35.0
 color = Color(0.14901961, 0.14901961, 0.15686275, 0.49803922)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1277658167]
+visible = false
 z_index = -4096
 texture_repeat = 2
 scale = Vector2(0.25, 0.25)

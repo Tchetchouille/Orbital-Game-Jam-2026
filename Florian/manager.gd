@@ -158,7 +158,7 @@ func _on_go_button_pressed() -> void:
 	elif fin_tour == "defeat":
 		do_defeat()
 	go_button.disabled = false
- 
+
 func do_victory():
 	pass
 
