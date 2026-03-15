@@ -27,7 +27,7 @@ func _ready() -> void:
 	# 	do_simulation_turn()
 	# 	await get_tree().create_timer(0.1).timeout
 	# 	print("Turn ", i)
-	link_changes_changed.emit(link_changes_this_turn)
+	link_changes_changed.emit(max_link_changes_per_turn - link_changes_this_turn)
 	link_changes_max_changed.emit(max_link_changes_per_turn)
 
 func create_link(agent1: Agent, agent2: Agent, created_by_player: bool = false, removable: bool = true) -> void:
@@ -110,7 +110,8 @@ func _on_remove_link(link: Link):
 			print("MAX LINK CHANGES PER TURN REACHED")
 			return
 		link_changes_this_turn += 1
-		link_changes_changed.emit(link_changes_this_turn)
+		link_changes_changed.emit(max_link_changes_per_turn - link_changes_this_turn)
+
 	remove_link(link)
 
 func _on_create_link(agent1_id:int, agent2_id:int):
@@ -130,7 +131,7 @@ func _on_create_link(agent1_id:int, agent2_id:int):
 		return
 	
 	link_changes_this_turn += 1
-	link_changes_changed.emit(link_changes_this_turn)
+	link_changes_changed.emit(max_link_changes_per_turn - link_changes_this_turn)
 
 	# Create link
 	create_link(get_agent_by_id(agent1_id), get_agent_by_id(agent2_id), true)
@@ -148,7 +149,7 @@ func _on_go_button_pressed() -> void:
 
 	max_link_changes_per_turn = new_budget
 	link_changes_this_turn = 0
-	link_changes_changed.emit(link_changes_this_turn)
+	link_changes_changed.emit(max_link_changes_per_turn - link_changes_this_turn)
 	link_changes_max_changed.emit(max_link_changes_per_turn)
 	var fin_tour
 	SFX.play("res://Colin/sounds/days_tick.wav")
